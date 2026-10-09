@@ -1,0 +1,104 @@
+{
+ "categories": {
+  "campus": "Campus",
+  "academics": "Academics",
+  "money": "Tuition & Aid",
+  "international": "International",
+  "health-safety": "Health & Safety",
+  "events": "Events",
+  "city": "Madison & Wisconsin"
+ },
+ "sources": [
+  {
+   "id": "uw-news",
+   "name": "UW-Madison News",
+   "url": "https://news.wisc.edu/feed/",
+   "category": "campus"
+  },
+  {
+   "id": "badger-herald",
+   "name": "The Badger Herald",
+   "url": "https://badgerherald.com/feed/",
+   "category": "campus"
+  },
+  {
+   "id": "registrar",
+   "name": "Office of the Registrar",
+   "url": "https://registrar.wisc.edu/feed/",
+   "category": "academics",
+   "max_age_days": 45
+  },
+  {
+   "id": "bursar",
+   "name": "Bursar's Office",
+   "url": "https://bursar.wisc.edu/feed/",
+   "category": "money",
+   "max_age_days": 45
+  },
+  {
+   "id": "financial-aid",
+   "name": "Student Financial Aid",
+   "url": "https://financialaid.wisc.edu/feed/",
+   "category": "money",
+   "max_age_days": 45
+  },
+  {
+   "id": "iss",
+   "name": "International Student Services",
+   "url": "https://iss.wisc.edu/feed/",
+   "category": "international",
+   "max_age_days": 45
+  },
+  {
+   "id": "international",
+   "name": "Division of International Studies",
+   "url": "https://international.wisc.edu/feed/",
+   "category": "international",
+   "max_age_days": 45
+  },
+  {
+   "id": "uhs",
+   "name": "University Health Services",
+   "url": "https://www.uhs.wisc.edu/feed/",
+   "category": "health-safety",
+   "max_age_days": 45
+  },
+  {
+   "id": "uwpd",
+   "name": "UW Police Department",
+   "url": "https://uwpd.wisc.edu/feed/",
+   "category": "health-safety",
+   "max_age_days": 45
+  },
+  {
+   "id": "events",
+   "name": "Today @ Wisconsin",
+   "url": "https://today.wisc.edu/events.rss",
+   "category": "events"
+  },
+  {
+   "id": "wsj",
+   "name": "Wisconsin State Journal",
+   "url": "https://madison.com/search/?f=rss&t=article&l=25",
+   "category": "city"
+  },
+  {
+   "id": "channel3000",
+   "name": "Channel 3000",
+   "url": "https://www.channel3000.com/search/?f=rss",
+   "category": "city"
+  },
+  {
+   "id": "nbc15",
+   "name": "NBC15",
+   "url": "https://www.nbc15.com/arc/outboundfeeds/rss/?outputType=xml",
+   "category": "city"
+  },
+  {
+   "id": "wkow",
+   "name": "WKOW",
+   "url": "https://www.wkow.com/search/?f=rss",
+   "category": "city"
+  }
+ ]
+}

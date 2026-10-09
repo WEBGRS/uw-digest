@@ -1,0 +1,10 @@
+data/raw/
+data/pending/
+data/seen.json
+logs/
+node_modules/
+.wrangler/
+secrets.local.json
+.dev.vars
+*.pyc
+__pycache__/

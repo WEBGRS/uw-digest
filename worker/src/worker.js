@@ -1,3 +1,4 @@
+import { WorkerEntrypoint } from "cloudflare:workers";
 import { catName, confirmEmail, escapeHtml, normalizePrefs, renderEmail, selectItems, shouldSendToday, validEmail } from "./engine.js";
 
 const json = (obj, status = 200, extra = {}) =>
@@ -25,7 +26,7 @@ async function loadDigest(env) {
   return r.json();
 }
 
-async function sendMail(env, to, mail, headers = {}) {
+async function sendMail(env, to, mail, headers = {}, from = env.MAIL_FROM) {
   if (!env.RESEND_API_KEY) {
     // Dry run: keep the message in the outbox table
     await env.DB.prepare("INSERT INTO outbox (to_email, subject, html, created) VALUES (?,?,?,?)").bind(to, mail.subject, mail.html, new Date().toISOString()).run();
@@ -34,7 +35,7 @@ async function sendMail(env, to, mail, headers = {}) {
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { authorization: "Bearer " + env.RESEND_API_KEY, "content-type": "application/json" },
-    body: JSON.stringify({ from: env.MAIL_FROM, to, subject: mail.subject, html: mail.html, text: mail.text, headers }),
+    body: JSON.stringify({ from, to, subject: mail.subject, html: mail.html, text: mail.text, headers }),
   });
   if (!r.ok) throw new Error("resend " + r.status + " " + (await r.text()).slice(0, 200));
   return "sent";
@@ -112,6 +113,14 @@ async function runDigest(env, date = today(), force = false) {
     }
   }
   return { sent, skipped, failed };
+}
+
+// Sign-in codes for madison-accounts (service binding only; not reachable from the web)
+export class Mailer extends WorkerEntrypoint {
+  async send(to, mail) {
+    if (!validEmail(to) || !mail || typeof mail.subject !== "string") throw new Error("bad mail");
+    return sendMail(this.env, to, { subject: mail.subject, html: String(mail.html || ""), text: String(mail.text || "") }, {}, this.env.LOGIN_FROM || this.env.MAIL_FROM);
+  }
 }
 
 export default {

@@ -5,6 +5,8 @@ from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 
+import images
+
 ROOT = Path(__file__).resolve().parent.parent
 UA = "Mozilla/5.0 (compatible; uw-news-digest/1.0)"
 MAX_AGE_DAYS = 14
@@ -50,6 +52,7 @@ def fetch_source(src):
             "source": src["name"], "source_id": src["id"], "category_hint": src["category"],
             "published": pub.isoformat() if pub else None,
             "excerpt": clean(body),
+            "img": images.extract(it),
         })
     return out
 
@@ -58,7 +61,7 @@ def main():
     cfg = json.loads((ROOT / "scripts" / "sources.json").read_text("utf-8"))
     seen_path = ROOT / "data" / "seen.json"
     seen = json.loads(seen_path.read_text("utf-8")) if seen_path.exists() else {}
-    fresh, health = [], {}
+    fresh, health, wanted = [], {}, {}
     for src in cfg["sources"]:
         try:
             items = fetch_source(src)
@@ -66,6 +69,9 @@ def main():
             health[src["id"]] = f"ERROR {type(e).__name__}: {e}"
             continue
         health[src["id"]] = len(items)
+        for it in items:
+            if it.get("img"):
+                wanted[it["id"]] = it["img"]
         keep = []
         cutoff = datetime.now(timezone.utc) - timedelta(days=src.get("max_age_days", MAX_AGE_DAYS))
         for it in items:
@@ -80,6 +86,10 @@ def main():
         time.sleep(0.5)
     fresh.sort(key=lambda x: x["published"] or "", reverse=True)
     fresh = fresh[:MAX_TOTAL]
+    for it in fresh:
+        it.pop("img", None)
+    n, got = images.update(ROOT / "data" / "images.json", wanted)
+    print(f"images: resolved {got}/{n} new")
     today = datetime.now().strftime("%Y-%m-%d")
     out = ROOT / "data" / "pending" / f"{today}.json"
     out.write_text(json.dumps(fresh, ensure_ascii=False, indent=1), "utf-8")

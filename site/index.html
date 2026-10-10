@@ -13,17 +13,18 @@
 <script src="config.js"></script>
 </head>
 <body>
+<div class="progress" aria-hidden="true"></div>
 <div class="utility">
   <div class="wrap">
     <span class="dateline" id="dateline"></span>
     <div class="actions">
       <label class="minimp"><span data-i18n="show"></span>
-      <select id="minimp">
-        <option value="1" data-i18n="impAll"></option>
-        <option value="3" selected data-i18n="imp3"></option>
-        <option value="4" data-i18n="imp4"></option>
-      </select>
-    </label>
+        <select id="minimp">
+          <option value="1" data-i18n="impAll"></option>
+          <option value="3" selected data-i18n="imp3"></option>
+          <option value="4" data-i18n="imp4"></option>
+        </select>
+      </label>
       <div class="langsw" role="group" aria-label="Language"><button type="button" class="lg" data-lang="en">EN</button><button type="button" class="lg" data-lang="zh">中文</button></div>
       <a class="btn" href="#subscribe" data-i18n="getEmail"></a>
     </div>
@@ -43,49 +44,60 @@
   </div>
 </nav>
 
-<main class="wrap" id="main">
-  <p class="updated" id="updated"></p>
-  <section id="front" aria-live="polite"></section>
-  <section id="blocks"></section>
-  <section id="feed"></section>
+<div class="ticker" id="ticker" hidden>
+  <span class="ticker-label" data-i18n="alerts"></span>
+  <div class="ticker-view"><div class="ticker-track" id="tickertrack"></div></div>
+</div>
 
-  <section class="card" id="subscribe">
-    <h2 data-i18n="subTitle"></h2>
-    <form id="subform" novalidate>
-      <label class="field"><span data-i18n="email"></span>
-        <input type="email" name="email" id="email" autocomplete="email" placeholder="you@wisc.edu" required>
-      </label>
-      <fieldset>
-        <legend data-i18n="topics"></legend>
-        <div class="checks" id="subcats"></div>
-      </fieldset>
-      <fieldset>
-        <legend data-i18n="often"></legend>
-        <div class="checks">
-          <label class="pill"><input type="radio" name="frequency" value="daily" checked><span data-i18n="daily"></span></label>
-          <label class="pill"><input type="radio" name="frequency" value="weekly"><span data-i18n="weekly"></span></label>
-          <label class="pill"><input type="radio" name="frequency" value="monthly"><span data-i18n="monthly"></span></label>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend data-i18n="mailLang"></legend>
-        <div class="checks">
-          <label class="pill"><input type="radio" name="lang" value="zh"><span>中文</span></label>
-          <label class="pill"><input type="radio" name="lang" value="en"><span>English</span></label>
-        </div>
-      </fieldset>
-      <label class="field"><span data-i18n="importance"></span>
-        <select name="min_importance">
-          <option value="1" data-i18n="impEvery"></option>
-          <option value="3" selected data-i18n="imp3"></option>
-          <option value="4" data-i18n="imp4"></option>
-        </select>
-      </label>
-      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn primary" type="submit" id="subbtn" data-i18n="subscribe"></button>
-      <p class="msg" id="submsg" role="status"></p>
-    </form>
+<main id="main">
+  <div class="wrap">
+    <p class="updated" id="updated"></p>
+    <section id="front" aria-live="polite"></section>
+  </div>
+  <section class="band" id="band" hidden>
+    <div class="wrap" id="blocks"></div>
   </section>
+  <div class="wrap">
+    <section id="feed"></section>
+
+    <section class="card" id="subscribe">
+      <h2 data-i18n="subTitle"></h2>
+      <form id="subform" novalidate>
+        <label class="field"><span data-i18n="email"></span>
+          <input type="email" name="email" id="email" autocomplete="email" placeholder="you@wisc.edu" required>
+        </label>
+        <fieldset>
+          <legend data-i18n="topics"></legend>
+          <div class="checks" id="subcats"></div>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n="often"></legend>
+          <div class="checks">
+            <label class="pill"><input type="radio" name="frequency" value="daily" checked><span data-i18n="daily"></span></label>
+            <label class="pill"><input type="radio" name="frequency" value="weekly"><span data-i18n="weekly"></span></label>
+            <label class="pill"><input type="radio" name="frequency" value="monthly"><span data-i18n="monthly"></span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n="mailLang"></legend>
+          <div class="checks">
+            <label class="pill"><input type="radio" name="lang" value="zh"><span>中文</span></label>
+            <label class="pill"><input type="radio" name="lang" value="en"><span>English</span></label>
+          </div>
+        </fieldset>
+        <label class="field"><span data-i18n="importance"></span>
+          <select name="min_importance">
+            <option value="1" data-i18n="impEvery"></option>
+            <option value="3" selected data-i18n="imp3"></option>
+            <option value="4" data-i18n="imp4"></option>
+          </select>
+        </label>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn primary" type="submit" id="subbtn" data-i18n="subscribe"></button>
+        <p class="msg" id="submsg" role="status"></p>
+      </form>
+    </section>
+  </div>
 </main>
 
 <footer class="wrap foot">

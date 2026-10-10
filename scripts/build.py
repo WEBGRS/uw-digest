@@ -52,6 +52,7 @@ def main():
 
     cutoff = (datetime.now() - timedelta(days=KEEP_DAYS)).strftime("%Y-%m-%d")
     # Several runs on one day (<date>.json, <date>-r2.json) merge by id
+    images = load(ROOT / "data" / "images.json", {})
     by_day = {}
     for f in sorted((ROOT / "data" / "digest").glob("*.json")):
         day = f.stem[:10]
@@ -59,6 +60,8 @@ def main():
             continue
         for e in json.loads(f.read_text("utf-8")):
             if not e.get("drop"):
+                if images.get(e["id"]):
+                    e["image"] = images[e["id"]]
                 by_day.setdefault(day, {})[e["id"]] = e
     days = []
     for day in sorted(by_day, reverse=True):

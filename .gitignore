@@ -8,3 +8,4 @@ secrets.local.json
 .dev.vars
 *.pyc
 __pycache__/
+shots/

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="html">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,25 +12,28 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="brand">UW Digest <span>威大消息汇总</span></div>
-    <a class="btn" href="#subscribe">Get by email</a>
+    <div class="brand">UW Digest <span data-i18n="tagline"></span></div>
+    <div class="actions">
+      <div class="langsw" role="group" aria-label="Language"><button type="button" class="lg" data-lang="en">EN</button><button type="button" class="lg" data-lang="zh">中文</button></div>
+      <a class="btn" href="#subscribe" data-i18n="getEmail"></a>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
   <section class="intro">
-    <h1>What happened at UW-Madison, in Chinese, ranked.</h1>
-    <p>Fourteen official and local sources, checked every morning. Each item is rated 1–5 for students and summarized in a line or two.</p>
+    <h1 data-i18n="h1"></h1>
+    <p data-i18n="lede"></p>
     <p class="updated" id="updated"></p>
   </section>
 
   <section class="filters" aria-label="Filters">
     <div class="chips" id="cats" role="group" aria-label="Category"></div>
-    <label class="minimp">Show
+    <label class="minimp"><span data-i18n="show"></span>
       <select id="minimp">
-        <option value="1">All items</option>
-        <option value="3" selected>Notable (3+)</option>
-        <option value="4">Important only (4+)</option>
+        <option value="1" data-i18n="impAll"></option>
+        <option value="3" selected data-i18n="imp3"></option>
+        <option value="4" data-i18n="imp4"></option>
       </select>
     </label>
   </section>
@@ -38,39 +41,46 @@
   <div id="feed" aria-live="polite"></div>
 
   <section class="card" id="subscribe">
-    <h2>Get the digest by email <span class="zh">邮件订阅</span></h2>
+    <h2 data-i18n="subTitle"></h2>
     <form id="subform" novalidate>
-      <label class="field">Email
+      <label class="field"><span data-i18n="email"></span>
         <input type="email" name="email" id="email" autocomplete="email" placeholder="you@wisc.edu" required>
       </label>
       <fieldset>
-        <legend>Topics 主题</legend>
+        <legend data-i18n="topics"></legend>
         <div class="checks" id="subcats"></div>
       </fieldset>
       <fieldset>
-        <legend>How often 频率</legend>
+        <legend data-i18n="often"></legend>
         <div class="checks">
-          <label><input type="radio" name="frequency" value="daily" checked> Daily 每天</label>
-          <label><input type="radio" name="frequency" value="weekly"> Weekly 每周一</label>
-          <label><input type="radio" name="frequency" value="monthly"> Monthly 每月 1 日</label>
+          <label><input type="radio" name="frequency" value="daily" checked> <span data-i18n="daily"></span></label>
+          <label><input type="radio" name="frequency" value="weekly"> <span data-i18n="weekly"></span></label>
+          <label><input type="radio" name="frequency" value="monthly"> <span data-i18n="monthly"></span></label>
         </div>
       </fieldset>
-      <label class="field">Importance 重要程度
+      <fieldset>
+        <legend data-i18n="mailLang"></legend>
+        <div class="checks">
+          <label><input type="radio" name="lang" value="zh"> 中文</label>
+          <label><input type="radio" name="lang" value="en"> English</label>
+        </div>
+      </fieldset>
+      <label class="field"><span data-i18n="importance"></span>
         <select name="min_importance">
-          <option value="1">Everything</option>
-          <option value="3" selected>Notable (3+)</option>
-          <option value="4">Important only (4+)</option>
+          <option value="1" data-i18n="impEvery"></option>
+          <option value="3" selected data-i18n="imp3"></option>
+          <option value="4" data-i18n="imp4"></option>
         </select>
       </label>
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn primary" type="submit" id="subbtn">Subscribe 订阅</button>
+      <button class="btn primary" type="submit" id="subbtn" data-i18n="subscribe"></button>
       <p class="msg" id="submsg" role="status"></p>
     </form>
   </section>
 </main>
 
 <footer class="wrap foot">
-  <p>Summaries are written by AI from each article's title and excerpt; the linked original is authoritative. Not affiliated with UW-Madison.</p>
+  <p data-i18n="foot"></p>
 </footer>
 <script src="app.js"></script>
 </body>

@@ -3,9 +3,11 @@ import assert from "node:assert/strict";
 import { escapeHtml, normalizePrefs, renderEmail, selectItems, shouldSendToday, validEmail } from "../src/engine.js";
 
 const cats = { campus: "Campus", money: "Tuition & Aid", city: "City" };
-const item = (id, category, importance, extra = {}) => ({ id, category, importance, url: "https://x.test/" + id, zh_title: "标题" + id, zh_points: "要点", source: "S", title: "T" + id, ...extra });
+const catsZh = { campus: "校园", money: "学费与资助", city: "城市" };
+const item = (id, category, importance, extra = {}) => ({ id, category, importance, url: "https://x.test/" + id, zh_title: "标题" + id, zh_points: "要点", en_points: "Points " + id, source: "S", title: "T" + id, ...extra });
 const digest = {
   categories: cats,
+  categories_zh: catsZh,
   days: [
     { date: "2026-10-09", items: [item("a", "campus", 5), item("b", "city", 2), item("c", "money", 4)] },
     { date: "2026-10-08", items: [item("d", "campus", 3)] },
@@ -21,7 +23,9 @@ test("validEmail accepts normal and rejects injection-ish input", () => {
 
 test("normalizePrefs drops unknown categories and bad values", () => {
   const p = normalizePrefs({ categories: ["campus", "evil", "campus"], frequency: "hourly", min_importance: 9 }, cats);
-  assert.deepEqual(p, { categories: ["campus"], frequency: "daily", min_importance: 3 });
+  assert.deepEqual(p, { categories: ["campus"], frequency: "daily", min_importance: 3, lang: "zh" });
+  assert.equal(normalizePrefs({ lang: "en" }, cats).lang, "en");
+  assert.equal(normalizePrefs({ lang: "fr" }, cats).lang, "zh");
   assert.deepEqual(normalizePrefs({ categories: [] }, cats).categories, ["campus", "money", "city"]);
 });
 
@@ -51,7 +55,7 @@ test("selectItems positive control: a wrong filter would be caught", () => {
 
 test("renderEmail escapes hostile feed text", () => {
   const evil = item("x", "campus", 5, { zh_title: '<script>alert(1)</script>', url: 'https://x.test/"onmouseover="y', zh_points: "<img src=x onerror=1>" });
-  const m = renderEmail([evil], sub(), "2026-10-09", cats, { prefs: "https://a/p?t=1", unsubscribe: "https://a/u?t=1" });
+  const m = renderEmail([evil], sub(), "2026-10-09", digest, { prefs: "https://a/p?t=1", unsubscribe: "https://a/u?t=1" });
   assert.ok(!m.html.includes("<script>") && !m.html.includes("<img"));
   assert.ok(!m.html.includes('"onmouseover="'));
   assert.ok(m.html.includes("退订") && m.text.includes("https://a/u?t=1"));
@@ -59,3 +63,18 @@ test("renderEmail escapes hostile feed text", () => {
 });
 
 test("escapeHtml", () => assert.equal(escapeHtml(`<a href="x">&'`), "&lt;a href=&quot;x&quot;&gt;&amp;&#39;"));
+
+test("renderEmail language switch: en uses English fields, zh uses Chinese", () => {
+  const items = [item("a", "campus", 5, { deadline: "2026-10-20" })];
+  const links = { prefs: "https://a/p", unsubscribe: "https://a/u" };
+  const en = renderEmail(items, sub({ lang: "en" }), "2026-10-09", digest, links);
+  assert.match(en.subject, /Daily Digest.*1 important/);
+  assert.ok(en.html.includes("Points a") && en.html.includes(">Campus<") && en.html.includes("due 2026-10-20") && en.html.includes("Unsubscribe"));
+  assert.ok(!en.html.includes("标题a") && !en.html.includes("退订"));
+  const zh = renderEmail(items, sub({ lang: "zh" }), "2026-10-09", digest, links);
+  assert.ok(zh.html.includes("标题a") && zh.html.includes(">校园<") && zh.html.includes("截止 2026-10-20") && zh.html.includes("退订"));
+  assert.ok(!zh.html.includes("Points a"));
+  // Missing en_points falls back instead of printing "undefined"
+  const old = renderEmail([item("o", "campus", 4, { en_points: undefined })], sub({ lang: "en" }), "2026-10-09", digest, links);
+  assert.ok(!old.html.includes("undefined"));
+});

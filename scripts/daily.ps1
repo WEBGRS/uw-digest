@@ -10,7 +10,11 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "fetch failed ($LASTEXITCODE)" }
     $n = [int](python -c "import json,sys;print(len(json.load(open(sys.argv[1],encoding='utf-8'))))" "data\pending\$day.json")
     if ($n -gt 0) {
-        $prompt = (Get-Content "scripts\judge_prompt.md" -Raw -Encoding UTF8).Replace("{DATE}", $day)
+        # A second run on the same day writes a suffixed file; build.py merges them by id
+        $out = "$day.json"
+        $k = 2
+        while (Test-Path "data\digest\$out") { $out = "$day-r$k.json"; $k++ }
+        $prompt = (Get-Content "scripts\judge_prompt.md" -Raw -Encoding UTF8).Replace("{DATE}", $day).Replace("{OUT}", $out)
         claude -p $prompt --allowedTools "Read" "Write" --permission-mode acceptEdits
         if ($LASTEXITCODE -ne 0) { throw "judge failed ($LASTEXITCODE)" }
         python scripts\build.py

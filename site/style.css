@@ -15,6 +15,10 @@ body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 -app
 .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
 .brand { font-weight: 700; font-size: 18px; }
 .brand span { font-weight: 500; color: var(--ink2); font-size: 14px; margin-left: 6px; }
+.actions { display: flex; align-items: center; gap: 10px; }
+.langsw { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.lg { border: 0; background: #fff; color: var(--ink); font: inherit; font-size: 14px; padding: 7px 11px; cursor: pointer; }
+.lg[aria-pressed="true"] { background: var(--ink); color: #fff; }
 .btn { display: inline-block; border: 1px solid var(--ink); color: var(--ink); background: #fff; border-radius: 8px; padding: 8px 14px; font: inherit; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; }
 .btn.primary { background: var(--red); border-color: var(--red); color: #fff; padding: 11px 20px; font-size: 16px; }
 .btn:focus-visible, select:focus-visible, input:focus-visible, .chip:focus-visible, a:focus-visible { outline: 3px solid #1a5fb4; outline-offset: 2px; }
@@ -63,3 +67,8 @@ legend { font-weight: 600; font-size: 14px; padding: 0; margin-bottom: 6px; }
   .card { padding: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+.lg, .btn { white-space: nowrap; }
+@media (max-width: 520px) {
+  .brand span { display: none; }
+  .btn { padding: 7px 10px; }
+}

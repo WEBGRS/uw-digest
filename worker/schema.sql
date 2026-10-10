@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS subscribers (
   categories TEXT NOT NULL,
   frequency TEXT NOT NULL DEFAULT 'daily',
   min_importance INTEGER NOT NULL DEFAULT 3,
+  lang TEXT NOT NULL DEFAULT 'zh',
   confirmed INTEGER NOT NULL DEFAULT 0,
   last_sent_date TEXT,
   created TEXT NOT NULL

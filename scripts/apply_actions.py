@@ -9,7 +9,7 @@ DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def main(day):
-    entries = json.loads((ROOT / "data" / "digest" / f"{day}.json").read_text("utf-8"))
+    entries = [e for f in sorted((ROOT / "data" / "digest").glob(f"{day}*.json")) for e in json.loads(f.read_text("utf-8"))]
     text = TODO.read_text("utf-8")
     lines = []
     for e in entries:

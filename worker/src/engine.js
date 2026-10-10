@@ -1,8 +1,38 @@
-// Shared logic: subscriber validation, item selection, email rendering
+// Shared logic: subscriber validation, item selection, email rendering (zh / en)
 export const FREQUENCIES = ["daily", "weekly", "monthly"];
+export const LANGS = ["zh", "en"];
 const WINDOW_DAYS = { daily: 2, weekly: 7, monthly: 31 };
 const MAX_ITEMS = { daily: 15, weekly: 25, monthly: 35 };
-const FREQ_ZH = { daily: "日报", weekly: "周报", monthly: "月报" };
+
+const T = {
+  zh: {
+    names: { daily: "日报", weekly: "周报", monthly: "月报" },
+    subject: (name, day, hot) => `UW-Madison ${name} · ${day}` + (hot ? ` · ${hot} 条重要` : ""),
+    title: (name) => `UW-Madison ${name}`,
+    count: (day, n) => `${day} · 共 ${n} 条`,
+    due: (d) => ` · 截止 ${d}`,
+    footer: "摘要由 AI 根据原文标题和摘录整理,以原文为准。",
+    prefs: "修改订阅",
+    unsub: "退订",
+    confirmSubject: "请确认订阅 UW-Madison 消息汇总 / Confirm your subscription",
+    confirmBody: "点击确认订阅:",
+    confirmIgnore: "如非本人操作请忽略。",
+  },
+  en: {
+    names: { daily: "Daily", weekly: "Weekly", monthly: "Monthly" },
+    subject: (name, day, hot) => `UW-Madison ${name} Digest · ${day}` + (hot ? ` · ${hot} important` : ""),
+    title: (name) => `UW-Madison ${name} Digest`,
+    count: (day, n) => `${day} · ${n} items`,
+    due: (d) => ` · due ${d}`,
+    footer: "Summaries are written by AI from each article's title and excerpt; the original is authoritative.",
+    prefs: "Manage preferences",
+    unsub: "Unsubscribe",
+    confirmSubject: "Confirm your UW-Madison digest subscription / 请确认订阅",
+    confirmBody: "Click to confirm your subscription:",
+    confirmIgnore: "If you did not sign up, ignore this email.",
+  },
+};
+const tr = (lang) => T[LANGS.includes(lang) ? lang : "zh"];
 
 export function escapeHtml(s) {
   return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -21,7 +51,8 @@ export function normalizePrefs(input, categories) {
   const frequency = FREQUENCIES.includes(input.frequency) ? input.frequency : "daily";
   const mi = Number(input.min_importance);
   const min_importance = [1, 2, 3, 4, 5].includes(mi) ? mi : 3;
-  return { categories: cats, frequency, min_importance };
+  const lang = LANGS.includes(input.lang) ? input.lang : "zh";
+  return { categories: cats, frequency, min_importance, lang };
 }
 
 // Weekly goes out on Monday, monthly on the 1st, daily every day
@@ -57,35 +88,45 @@ export function selectItems(digest, sub, today) {
 
 const STARS = (n) => "●".repeat(n) + "○".repeat(5 - n);
 
-export function renderEmail(items, sub, today, categories, links) {
+// Category label in the subscriber's language
+export const catName = (digest, cat, lang) => (lang === "en" ? digest.categories : digest.categories_zh || digest.categories)[cat] || cat;
+
+export function renderEmail(items, sub, today, digest, links) {
+  const lang = LANGS.includes(sub.lang) ? sub.lang : "zh";
+  const t = tr(lang);
+  const name = t.names[sub.frequency];
   const hot = items.filter((i) => i.importance >= 4).length;
-  const subject = `UW-Madison ${FREQ_ZH[sub.frequency]} · ${today}` + (hot ? ` · ${hot} 条重要` : "");
   const groups = {};
   for (const it of items) (groups[it.category] ||= []).push(it);
+  const headline = (it) => (lang === "en" ? it.title : it.zh_title);
+  const points = (it) => (lang === "en" ? it.en_points || it.zh_points : it.zh_points);
+  const subline = (it) => (lang === "en" ? it.source : `${it.source} · ${it.title}`);
   let html = `<div style="font-family:-apple-system,Segoe UI,Helvetica,Arial,'PingFang SC','Microsoft YaHei',sans-serif;max-width:620px;margin:0 auto;color:#1c2330">`;
-  html += `<h2 style="margin:0 0 4px">UW-Madison ${FREQ_ZH[sub.frequency]}</h2><div style="color:#4a5568;margin-bottom:16px">${escapeHtml(today)} · 共 ${items.length} 条</div>`;
-  let text = `UW-Madison ${FREQ_ZH[sub.frequency]} ${today}\n\n`;
+  html += `<h2 style="margin:0 0 4px">${escapeHtml(t.title(name))}</h2><div style="color:#4a5568;margin-bottom:16px">${escapeHtml(t.count(today, items.length))}</div>`;
+  let text = `${t.title(name)} ${today}\n\n`;
   for (const [cat, list] of Object.entries(groups)) {
-    html += `<h3 style="border-bottom:2px solid #c5050c;padding-bottom:4px;margin:20px 0 8px">${escapeHtml(categories[cat] || cat)}</h3>`;
-    text += `== ${categories[cat] || cat} ==\n`;
+    const label = catName(digest, cat, lang);
+    html += `<h3 style="border-bottom:2px solid #c5050c;padding-bottom:4px;margin:20px 0 8px">${escapeHtml(label)}</h3>`;
+    text += `== ${label} ==\n`;
     for (const it of list) {
-      const dl = it.deadline ? ` · 截止 ${escapeHtml(it.deadline)}` : "";
-      html += `<div style="margin:0 0 12px"><div><span style="color:#c5050c;font-size:12px;letter-spacing:1px">${STARS(it.importance)}</span> <a href="${escapeHtml(it.url)}" style="color:#1c2330;font-weight:600;text-decoration:none">${escapeHtml(it.zh_title)}</a></div>`;
-      html += `<div style="margin-top:2px">${escapeHtml(it.zh_points)}${dl}</div>`;
-      html += `<div style="color:#4a5568;font-size:12px;margin-top:2px">${escapeHtml(it.source)} · ${escapeHtml(it.title)}</div></div>`;
-      text += `[${it.importance}/5] ${it.zh_title}\n  ${it.zh_points}${it.deadline ? " 截止 " + it.deadline : ""}\n  ${it.url}\n`;
+      const dl = it.deadline ? t.due(it.deadline) : "";
+      html += `<div style="margin:0 0 12px"><div><span style="color:#c5050c;font-size:12px;letter-spacing:1px">${STARS(it.importance)}</span> <a href="${escapeHtml(it.url)}" style="color:#1c2330;font-weight:600;text-decoration:none">${escapeHtml(headline(it))}</a></div>`;
+      html += `<div style="margin-top:2px">${escapeHtml(points(it))}${escapeHtml(dl)}</div>`;
+      html += `<div style="color:#4a5568;font-size:12px;margin-top:2px">${escapeHtml(subline(it))}</div></div>`;
+      text += `[${it.importance}/5] ${headline(it)}\n  ${points(it)}${dl}\n  ${it.url}\n`;
     }
     text += "\n";
   }
-  html += `<hr style="border:0;border-top:1px solid #d7dce3;margin:24px 0 12px"><div style="font-size:12px;color:#4a5568">摘要由 AI 根据原文标题和摘录整理,以原文为准。<a href="${escapeHtml(links.prefs)}">修改订阅</a> · <a href="${escapeHtml(links.unsubscribe)}">退订</a></div></div>`;
-  text += `摘要由 AI 整理,以原文为准。\n修改订阅: ${links.prefs}\n退订: ${links.unsubscribe}\n`;
-  return { subject, html, text };
+  html += `<hr style="border:0;border-top:1px solid #d7dce3;margin:24px 0 12px"><div style="font-size:12px;color:#4a5568">${escapeHtml(t.footer)} <a href="${escapeHtml(links.prefs)}">${escapeHtml(t.prefs)}</a> · <a href="${escapeHtml(links.unsubscribe)}">${escapeHtml(t.unsub)}</a></div></div>`;
+  text += `${t.footer}\n${t.prefs}: ${links.prefs}\n${t.unsub}: ${links.unsubscribe}\n`;
+  return { subject: t.subject(name, today, hot), html, text };
 }
 
-export function confirmEmail(link) {
+export function confirmEmail(link, lang) {
+  const t = tr(lang);
   return {
-    subject: "Confirm your UW-Madison digest subscription / 请确认订阅",
-    html: `<p>Click to confirm your subscription / 点击确认订阅:</p><p><a href="${escapeHtml(link)}">${escapeHtml(link)}</a></p><p>If you did not sign up, ignore this email. 如非本人操作请忽略。</p>`,
-    text: `Confirm / 确认订阅: ${link}\nIf you did not sign up, ignore this email.`,
+    subject: t.confirmSubject,
+    html: `<p>${escapeHtml(t.confirmBody)}</p><p><a href="${escapeHtml(link)}">${escapeHtml(link)}</a></p><p>${escapeHtml(t.confirmIgnore)}</p>`,
+    text: `${t.confirmBody} ${link}\n${t.confirmIgnore}`,
   };
 }

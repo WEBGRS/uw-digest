@@ -1,0 +1,1 @@
+ALTER TABLE subscribers ADD COLUMN lang TEXT NOT NULL DEFAULT 'zh';

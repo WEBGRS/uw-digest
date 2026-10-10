@@ -100,5 +100,14 @@
    "url": "https://www.wkow.com/search/?f=rss",
    "category": "city"
   }
- ]
+ ],
+ "categories_zh": {
+  "campus": "校园",
+  "academics": "学业",
+  "money": "学费与资助",
+  "international": "国际学生",
+  "health-safety": "健康与安全",
+  "events": "活动",
+  "city": "麦迪逊与威州"
+ }
 }

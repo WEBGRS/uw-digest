@@ -1,6 +1,83 @@
 const API = (window.CONFIG && window.CONFIG.API) || "";
 const $ = (id) => document.getElementById(id);
-const state = { digest: null, cat: "all", min: 3 };
+
+const I18N = {
+  en: {
+    tagline: "UW-Madison news digest",
+    getEmail: "Get by email",
+    h1: "What happened at UW-Madison, ranked.",
+    lede: "Fourteen official and local sources, checked every morning. Each item is rated 1–5 for students and summarized in a line or two.",
+    all: "All",
+    show: "Show",
+    impAll: "All items",
+    imp3: "Notable (3+)",
+    imp4: "Important only (4+)",
+    impEvery: "Everything",
+    subTitle: "Get the digest by email",
+    email: "Email",
+    topics: "Topics",
+    often: "How often",
+    daily: "Daily",
+    weekly: "Weekly (Mondays)",
+    monthly: "Monthly (1st)",
+    mailLang: "Email language",
+    importance: "Importance",
+    subscribe: "Subscribe",
+    foot: "Summaries are written by AI from each article's title and excerpt; the linked original is authoritative. Not affiliated with UW-Madison.",
+    updated: (t, n) => `Updated ${t} · ${n} items in the last 60 days`,
+    due: "due",
+    empty: "Nothing at this level yet. Try a lower importance filter.",
+    loadFail: "Could not load the digest.",
+    badEmail: "Enter a valid email address.",
+    noTopic: "Pick at least one topic.",
+    ok: "Check your inbox and click the confirmation link.",
+    rate: "Too many attempts. Try again in an hour.",
+    invalid: "That email address looks invalid.",
+    err: "Something went wrong. Try again.",
+    net: "Could not reach the server.",
+    locale: "en-US",
+    placeholder: "you@wisc.edu",
+  },
+  zh: {
+    tagline: "威大消息汇总",
+    getEmail: "邮件订阅",
+    h1: "威斯康星大学麦迪逊分校,最近都发生了什么",
+    lede: "每天早上检查 14 个官方和本地来源。每条消息按对学生的重要性打 1–5 分,并用一两句话概括。",
+    all: "全部",
+    show: "显示",
+    impAll: "全部消息",
+    imp3: "值得一看(3 分以上)",
+    imp4: "只看重要(4 分以上)",
+    impEvery: "全部",
+    subTitle: "邮件订阅",
+    email: "邮箱",
+    topics: "主题",
+    often: "频率",
+    daily: "每天",
+    weekly: "每周一",
+    monthly: "每月 1 日",
+    mailLang: "邮件语言",
+    importance: "重要程度",
+    subscribe: "订阅",
+    foot: "摘要由 AI 根据原文标题和摘录整理,以原文为准。本站与威斯康星大学无隶属关系。",
+    updated: (t, n) => `更新于 ${t} · 近 60 天共 ${n} 条`,
+    due: "截止",
+    empty: "这个级别暂时没有内容,可以调低重要程度。",
+    loadFail: "无法加载内容。",
+    badEmail: "请输入有效邮箱。",
+    noTopic: "至少选一个主题。",
+    ok: "请到邮箱点击确认链接。",
+    rate: "尝试次数过多,请一小时后再试。",
+    invalid: "邮箱格式不对。",
+    err: "出错了,请重试。",
+    net: "无法连接服务器。",
+    locale: "zh-CN",
+    placeholder: "you@wisc.edu",
+  },
+};
+
+const state = { digest: null, cat: "all", min: 3, lang: "en", mailLangTouched: false };
+const t = (k) => I18N[state.lang][k];
 
 const safeUrl = (u) => (/^https?:\/\//.test(u) ? u : "#");
 const el = (tag, cls, text) => {
@@ -9,15 +86,25 @@ const el = (tag, cls, text) => {
   if (text != null) n.textContent = text;
   return n;
 };
+const catLabel = (k) => ((state.lang === "zh" ? state.digest.categories_zh : state.digest.categories) || state.digest.categories)[k] || k;
+
+function initialLang() {
+  try {
+    const saved = localStorage.getItem("uwd-lang");
+    if (saved === "en" || saved === "zh") return saved;
+  } catch {}
+  return (navigator.language || "").toLowerCase().startsWith("zh") ? "zh" : "en";
+}
 
 function dayLabel(d) {
-  const dt = new Date(d + "T12:00:00");
-  return dt.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" });
+  return new Date(d + "T12:00:00").toLocaleDateString(t("locale"), { weekday: "long", month: "short", day: "numeric" });
 }
 
 function render() {
   const feed = $("feed");
   feed.replaceChildren();
+  if (!state.digest) return;
+  const en = state.lang === "en";
   let shown = 0;
   for (const day of state.digest.days) {
     const items = day.items.filter((i) => (state.cat === "all" || i.category === state.cat) && i.importance >= state.min);
@@ -29,16 +116,16 @@ function render() {
       row.append(el("div", "score s" + it.importance, it.importance + " / 5"));
       const body = el("div");
       const h = el("h3");
-      const a = el("a", null, it.zh_title);
+      const a = el("a", null, en ? it.title : it.zh_title);
       a.href = safeUrl(it.url);
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       h.append(a);
-      body.append(h, el("p", null, it.zh_points));
+      body.append(h, el("p", null, en ? it.en_points || it.zh_points : it.zh_points));
       const meta = el("div", "meta");
-      meta.append(el("span", "tag", state.digest.categories[it.category] || it.category));
-      meta.append(document.createTextNode(it.source + " · " + it.title));
-      if (it.deadline) meta.append(el("span", "due", "  · due " + it.deadline));
+      meta.append(el("span", "tag", catLabel(it.category)));
+      meta.append(document.createTextNode(en ? it.source : it.source + " · " + it.title));
+      if (it.deadline) meta.append(el("span", "due", `  · ${t("due")} ${it.deadline}`));
       body.append(meta);
       row.append(body);
       sec.append(row);
@@ -46,11 +133,12 @@ function render() {
     }
     feed.append(sec);
   }
-  if (!shown) feed.append(el("div", "empty", "Nothing at this level yet. Try a lower importance filter."));
+  if (!shown) feed.append(el("div", "empty", t("empty")));
 }
 
 function buildFilters() {
   const cats = $("cats");
+  cats.replaceChildren();
   const mk = (key, label) => {
     const b = el("button", "chip", label);
     b.type = "button";
@@ -63,23 +151,44 @@ function buildFilters() {
     });
     return b;
   };
-  cats.append(mk("all", "All"));
-  for (const [k, v] of Object.entries(state.digest.categories)) cats.append(mk(k, v));
-  $("minimp").addEventListener("change", (e) => {
-    state.min = Number(e.target.value);
-    render();
-  });
+  cats.append(mk("all", t("all")));
+  for (const k of Object.keys(state.digest.categories)) cats.append(mk(k, catLabel(k)));
+  // Subscribe-form topics: keep ticks across a language switch
   const sub = $("subcats");
-  for (const [k, v] of Object.entries(state.digest.categories)) {
+  const ticked = new Set([...sub.querySelectorAll("input:checked")].map((i) => i.value));
+  const first = sub.children.length === 0;
+  sub.replaceChildren();
+  for (const k of Object.keys(state.digest.categories)) {
     const l = el("label");
     const i = el("input");
     i.type = "checkbox";
     i.name = "categories";
     i.value = k;
-    i.checked = true;
-    l.append(i, document.createTextNode(v));
+    i.checked = first || ticked.has(k);
+    l.append(i, document.createTextNode(catLabel(k)));
     sub.append(l);
   }
+}
+
+function applyLang() {
+  document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
+  document.querySelectorAll("[data-i18n]").forEach((n) => (n.textContent = t(n.dataset.i18n)));
+  $("email").placeholder = t("placeholder");
+  document.querySelectorAll(".lg").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)));
+  // Mail language follows the page until the visitor picks one
+  if (!state.mailLangTouched) document.querySelector(`input[name="lang"][value="${state.lang}"]`).checked = true;
+  if (state.digest) {
+    $("updated").textContent = t("updated")(state.digest.generated.slice(0, 16).replace("T", " "), state.digest.days.reduce((a, d) => a + d.items.length, 0));
+    buildFilters();
+  }
+  $("submsg").textContent = "";
+  render();
+}
+
+function setLang(l) {
+  state.lang = l;
+  try { localStorage.setItem("uwd-lang", l); } catch {}
+  applyLang();
 }
 
 async function submitForm(e) {
@@ -88,56 +197,42 @@ async function submitForm(e) {
   const msg = $("submsg");
   const email = f.email.value.trim();
   msg.className = "msg";
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
-    msg.textContent = "Enter a valid email address. 请输入有效邮箱。";
-    msg.classList.add("err");
-    return;
-  }
+  const fail = (k) => { msg.textContent = t(k); msg.classList.add("err"); };
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail("badEmail");
   const cats = [...f.querySelectorAll('input[name="categories"]:checked')].map((c) => c.value);
-  if (!cats.length) {
-    msg.textContent = "Pick at least one topic. 至少选一个主题。";
-    msg.classList.add("err");
-    return;
-  }
+  if (!cats.length) return fail("noTopic");
   const btn = $("subbtn");
   btn.disabled = true;
   try {
     const r = await fetch(API + "/api/subscribe", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ email, categories: cats, frequency: f.frequency.value, min_importance: Number(f.min_importance.value), website: f.website.value }),
+      body: JSON.stringify({ email, categories: cats, frequency: f.frequency.value, min_importance: Number(f.min_importance.value), lang: f.lang.value, website: f.website.value }),
     });
     const j = await r.json().catch(() => ({}));
-    if (r.ok && j.ok) {
-      msg.textContent = "Check your inbox and click the confirmation link. 请到邮箱点击确认链接。";
-      msg.classList.add("ok");
-    } else if (r.status === 429) {
-      msg.textContent = "Too many attempts. Try again in an hour. 请稍后再试。";
-      msg.classList.add("err");
-    } else {
-      msg.textContent = j.error === "invalid_email" ? "That email address looks invalid. 邮箱格式不对。" : "Something went wrong. Try again. 出错了,请重试。";
-      msg.classList.add("err");
-    }
+    if (r.ok && j.ok) { msg.textContent = t("ok"); msg.classList.add("ok"); }
+    else if (r.status === 429) fail("rate");
+    else fail(j.error === "invalid_email" ? "invalid" : "err");
   } catch {
-    msg.textContent = "Could not reach the server. 无法连接服务器。";
-    msg.classList.add("err");
+    fail("net");
   } finally {
     btn.disabled = false;
   }
 }
 
 async function init() {
+  state.lang = initialLang();
+  document.querySelectorAll(".lg").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
+  document.querySelectorAll('input[name="lang"]').forEach((r) => r.addEventListener("change", () => (state.mailLangTouched = true)));
+  $("minimp").addEventListener("change", (e) => { state.min = Number(e.target.value); render(); });
+  $("subform").addEventListener("submit", submitForm);
+  applyLang();
   try {
-    const r = await fetch("data/digest.json", { cache: "no-cache" });
-    state.digest = await r.json();
+    state.digest = await (await fetch("data/digest.json", { cache: "no-cache" })).json();
   } catch {
-    $("feed").append(el("div", "empty", "Could not load the digest."));
+    $("feed").append(el("div", "empty", t("loadFail")));
     return;
   }
-  const n = state.digest.days.reduce((a, d) => a + d.items.length, 0);
-  $("updated").textContent = `Updated ${state.digest.generated.slice(0, 16).replace("T", " ")} · ${n} items in the last 60 days`;
-  buildFilters();
-  render();
-  $("subform").addEventListener("submit", submitForm);
+  applyLang();
 }
 init();

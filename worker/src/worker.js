@@ -1,4 +1,4 @@
-import { confirmEmail, escapeHtml, normalizePrefs, renderEmail, selectItems, shouldSendToday, validEmail } from "./engine.js";
+import { catName, confirmEmail, escapeHtml, normalizePrefs, renderEmail, selectItems, shouldSendToday, validEmail } from "./engine.js";
 
 const json = (obj, status = 200, extra = {}) =>
   new Response(JSON.stringify(obj), { status, headers: { "content-type": "application/json", ...extra } });
@@ -64,15 +64,15 @@ async function handleSubscribe(req, env, digest) {
   if (existing) {
     // Existing address: only touch prefs once confirmed; never reveal state to the caller
     if (existing.confirmed) {
-      await env.DB.prepare("UPDATE subscribers SET categories=?, frequency=?, min_importance=? WHERE email=?").bind(JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, email).run();
+      await env.DB.prepare("UPDATE subscribers SET categories=?, frequency=?, min_importance=?, lang=? WHERE email=?").bind(JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, prefs.lang, email).run();
       return { status: 200, body: { ok: true, status: "check_email" } };
     }
-    await env.DB.prepare("UPDATE subscribers SET categories=?, frequency=?, min_importance=? WHERE email=?").bind(JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, email).run();
+    await env.DB.prepare("UPDATE subscribers SET categories=?, frequency=?, min_importance=?, lang=? WHERE email=?").bind(JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, prefs.lang, email).run();
   } else {
-    await env.DB.prepare("INSERT INTO subscribers (email, token, categories, frequency, min_importance, confirmed, created) VALUES (?,?,?,?,?,0,?)").bind(email, tok, JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, new Date().toISOString()).run();
+    await env.DB.prepare("INSERT INTO subscribers (email, token, categories, frequency, min_importance, lang, confirmed, created) VALUES (?,?,?,?,?,?,0,?)").bind(email, tok, JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, prefs.lang, new Date().toISOString()).run();
   }
   if (!existing || !existing.confirmed) {
-    await sendMail(env, email, confirmEmail(`${env.API_URL}/api/confirm?t=${tok}`));
+    await sendMail(env, email, confirmEmail(`${env.API_URL}/api/confirm?t=${tok}`, prefs.lang));
   }
   return { status: 200, body: { ok: true, status: "check_email" } };
 }
@@ -81,11 +81,11 @@ async function prefsPage(env, t, digest, saved) {
   const r = await env.DB.prepare("SELECT * FROM subscribers WHERE token=?").bind(t).first();
   if (!r) return page("Link not valid", "<p>This link is invalid or expired. 链接无效。</p>");
   const s = rowToSub(r);
-  const cats = Object.entries(digest.categories).map(([k, v]) => `<label style="display:block"><input type="checkbox" name="c" value="${escapeHtml(k)}" ${s.categories.includes(k) ? "checked" : ""}> ${escapeHtml(v)}</label>`).join("");
+  const cats = Object.entries(digest.categories).map(([k, v]) => `<label style="display:block"><input type="checkbox" name="c" value="${escapeHtml(k)}" ${s.categories.includes(k) ? "checked" : ""}> ${escapeHtml(catName(digest, k, s.lang))}</label>`).join("");
   const fr = ["daily", "weekly", "monthly"].map((f) => `<label style="margin-right:12px"><input type="radio" name="frequency" value="${f}" ${s.frequency === f ? "checked" : ""}> ${f}</label>`).join("");
   const mi = [[1, "All"], [3, "Notable (3+)"], [4, "Important only (4+)"]].map(([v, l]) => `<option value="${v}" ${s.min_importance === v ? "selected" : ""}>${l}</option>`).join("");
   return page("Your subscription / 订阅设置", `${saved ? '<p style="color:#0a7a3b">Saved. 已保存。</p>' : ""}<p>${escapeHtml(s.email)}</p>
-<form method="post" action="${env.API_URL}/api/prefs?t=${encodeURIComponent(t)}">${cats}<p>${fr}</p><p>Minimum importance: <select name="min_importance">${mi}</select></p>
+<form method="post" action="${env.API_URL}/api/prefs?t=${encodeURIComponent(t)}">${cats}<p>${fr}</p><p>Email language 邮件语言: <label><input type="radio" name="lang" value="zh" ${s.lang === "zh" ? "checked" : ""}> 中文</label> <label><input type="radio" name="lang" value="en" ${s.lang === "en" ? "checked" : ""}> English</label></p><p>Minimum importance: <select name="min_importance">${mi}</select></p>
 <button style="padding:8px 16px">Save 保存</button></form>
 <p><a href="${env.API_URL}/api/unsubscribe?t=${encodeURIComponent(t)}">Unsubscribe 退订</a></p>`);
 }
@@ -101,7 +101,7 @@ async function runDigest(env, date = today(), force = false) {
     if (!items.length) { skipped++; continue; }
     const links = { prefs: `${env.API_URL}/api/prefs?t=${sub.token}`, unsubscribe: `${env.API_URL}/api/unsubscribe?t=${sub.token}` };
     try {
-      await sendMail(env, sub.email, renderEmail(items, sub, date, digest.categories, links), {
+      await sendMail(env, sub.email, renderEmail(items, sub, date, digest, links), {
         "List-Unsubscribe": `<${links.unsubscribe}>`,
       });
       await env.DB.prepare("UPDATE subscribers SET last_sent_date=? WHERE id=?").bind(date, sub.id).run();
@@ -136,8 +136,8 @@ export default {
         const digest = await loadDigest(env);
         if (req.method === "POST") {
           const form = await req.formData();
-          const prefs = normalizePrefs({ categories: form.getAll("c"), frequency: form.get("frequency"), min_importance: form.get("min_importance") }, digest.categories);
-          await env.DB.prepare("UPDATE subscribers SET categories=?, frequency=?, min_importance=? WHERE token=?").bind(JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, t).run();
+          const prefs = normalizePrefs({ categories: form.getAll("c"), frequency: form.get("frequency"), min_importance: form.get("min_importance"), lang: form.get("lang") }, digest.categories);
+          await env.DB.prepare("UPDATE subscribers SET categories=?, frequency=?, min_importance=?, lang=? WHERE token=?").bind(JSON.stringify(prefs.categories), prefs.frequency, prefs.min_importance, prefs.lang, t).run();
           return prefsPage(env, t, digest, true);
         }
         return prefsPage(env, t, digest, false);

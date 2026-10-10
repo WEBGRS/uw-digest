@@ -139,34 +139,25 @@ function link(it, text, cls) {
   return a;
 }
 
-// Photo from the item's own feed, or a category art tile when absent / blocked
+// Photo from the item's own feed only; no photo (or a broken one) means nothing is drawn
 function media(it, credit) {
+  const src = it.image ? safeUrl(it.image) : "";
+  if (!src) return document.createDocumentFragment();
   const m = el("a", "media");
   m.href = it.url.startsWith("http") ? it.url : "#";
   m.target = "_blank";
   m.rel = "noopener noreferrer";
   m.tabIndex = -1;
   m.setAttribute("aria-hidden", "true");
-  m.style.setProperty("--cat", catColor(it.category));
-  const art = () => {
-    const a = el("div", "art");
-    a.append(icon(it.category));
-    return a;
-  };
-  const src = it.image ? safeUrl(it.image) : "";
-  if (src) {
-    const img = document.createElement("img");
-    img.loading = "lazy";
-    img.decoding = "async";
-    img.alt = "";
-    img.referrerPolicy = "no-referrer";
-    img.addEventListener("error", () => { img.remove(); m.querySelector(".credit")?.remove(); m.append(art()); });
-    img.src = src;
-    m.append(art(), img);
-    if (credit) m.append(el("span", "credit", it.source));
-  } else {
-    m.append(art());
-  }
+  const img = document.createElement("img");
+  img.loading = "lazy";
+  img.decoding = "async";
+  img.alt = "";
+  img.referrerPolicy = "no-referrer";
+  img.addEventListener("error", () => m.remove());
+  img.src = src;
+  m.append(img);
+  if (credit) m.append(el("span", "credit", it.source));
   return m;
 }
 

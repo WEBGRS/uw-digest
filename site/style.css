@@ -78,15 +78,10 @@ select, input[type=email], input[type=text] { font: inherit; font-size: 14px; pa
 
 .updated { margin: 14px 0 0; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--ink2); }
 
-/* Media: real photo or category art */
-.media { position: relative; overflow: hidden; background: var(--cat, var(--ink)); aspect-ratio: var(--ar, 16 / 9); }
+/* Media: only when the source supplies a photo */
+.media { position: relative; overflow: hidden; background: var(--ink); aspect-ratio: var(--ar, 16 / 9); }
 .media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
 a.media { display: block; }
-.art { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(255, 255, 255, .92); background:
-  radial-gradient(circle at 20% 15%, rgba(255, 255, 255, .22), transparent 45%),
-  repeating-linear-gradient(135deg, rgba(255, 255, 255, .07) 0 12px, transparent 12px 24px),
-  linear-gradient(145deg, color-mix(in srgb, var(--cat) 82%, white), color-mix(in srgb, var(--cat) 78%, black)); }
-.art svg { width: 34%; max-width: 96px; min-width: 22px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .credit { position: absolute; right: 0; bottom: 0; background: rgba(17, 22, 32, .72); color: #fff; font-size: 10px; letter-spacing: .04em; padding: 2px 7px; }
 article:hover .media img, .block:hover .media img { transform: scale(1.05); }
 
@@ -114,6 +109,7 @@ article:hover .media img, .block:hover .media img { transform: scale(1.05); }
 .rank .n { font-family: var(--serif); font-weight: 900; font-size: 34px; line-height: 1; color: var(--cat, var(--red)); }
 .rank h3 { margin: 6px 0 0; font-family: var(--serif); font-size: 17px; line-height: 1.3; font-weight: 700; }
 .rank .media { --ar: 1 / 1; }
+.rank:not(:has(> .media)) { grid-template-columns: 32px 1fr; }
 
 /* Section band: full-width tinted area with colored blocks */
 .band { background: var(--soft); border-top: 3px solid var(--rule); border-bottom: 3px solid var(--rule); padding: 32px 0 36px; }
@@ -143,6 +139,7 @@ article:hover .media img, .block:hover .media img { transform: scale(1.05); }
 .row h3 { margin: 6px 0 4px; font-family: var(--serif); font-size: 21px; line-height: 1.28; font-weight: 700; }
 .row p { margin: 0; font-size: 15px; }
 .row .media { --ar: 3 / 2; align-self: start; }
+.row:not(:has(> .media)) { grid-template-columns: minmax(0, 1fr); }
 .more { display: block; margin: 28px auto 0; background: #fff; color: var(--ink); border: 1px solid var(--rule); border-radius: 3px; padding: 10px 26px; font: inherit; font-weight: 700; cursor: pointer; transition: background .2s, color .2s; }
 .more:hover { background: var(--ink); color: #fff; }
 .empty { padding: 60px 0; text-align: center; font-family: var(--serif); font-size: 20px; }

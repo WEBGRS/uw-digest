@@ -8,46 +8,46 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%23c5050c%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2720%27 font-family=%27Arial%27 font-weight=%27700%27 text-anchor=%27middle%27 fill=%27white%27%3EW%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700;900&family=Source+Serif+4:opsz,wght@8..60,500;8..60,700;8..60,900&display=swap">
 <link rel="stylesheet" href="style.css">
 <script src="config.js"></script>
 </head>
 <body>
-<header class="top">
+<div class="utility">
   <div class="wrap">
-    <div class="brand"><div class="mark" aria-hidden="true">W</div>UW Digest <span class="tag-line" data-i18n="tagline"></span></div>
+    <span class="dateline" id="dateline"></span>
     <div class="actions">
-      <div class="langsw" role="group" aria-label="Language"><button type="button" class="lg" data-lang="en">EN</button><button type="button" class="lg" data-lang="zh">中文</button></div>
-      <a class="btn" href="#subscribe" data-i18n="getEmail"></a>
-    </div>
-  </div>
-</header>
-
-<main class="wrap">
-  <section class="masthead">
-    <h1 id="mast"></h1>
-    <p class="updated" id="updated"></p>
-  </section>
-
-  <section class="picks" id="picks" hidden>
-    <h2 class="sec-title" data-i18n="topPicks"></h2>
-    <div class="pick-grid" id="pickgrid"></div>
-  </section>
-
-  <div class="feedzone">
-  <section class="filters" aria-label="Filters">
-    <div class="chips" id="cats" role="group" aria-label="Category"></div>
-    <label class="minimp"><span data-i18n="show"></span>
+      <label class="minimp"><span data-i18n="show"></span>
       <select id="minimp">
         <option value="1" data-i18n="impAll"></option>
         <option value="3" selected data-i18n="imp3"></option>
         <option value="4" data-i18n="imp4"></option>
       </select>
     </label>
-  </section>
-
-  <div id="feed" aria-live="polite"></div>
+      <div class="langsw" role="group" aria-label="Language"><button type="button" class="lg" data-lang="en">EN</button><button type="button" class="lg" data-lang="zh">中文</button></div>
+      <a class="btn" href="#subscribe" data-i18n="getEmail"></a>
+    </div>
   </div>
+</div>
+
+<header class="nameplate">
+  <div class="wrap">
+    <h1 class="logo">UW Digest</h1>
+    <p class="tagline" data-i18n="tagline"></p>
+  </div>
+</header>
+
+<nav class="sections" aria-label="Sections">
+  <div class="wrap">
+    <div class="navlist" id="cats" role="group" aria-label="Category"></div>
+  </div>
+</nav>
+
+<main class="wrap" id="main">
+  <p class="updated" id="updated"></p>
+  <section id="front" aria-live="polite"></section>
+  <section id="blocks"></section>
+  <section id="feed"></section>
 
   <section class="card" id="subscribe">
     <h2 data-i18n="subTitle"></h2>

@@ -11,7 +11,7 @@ with sync_playwright() as p:
         pg.on("console", lambda m: errs.append(m.text) if m.type == "error" else None)
         pg.on("pageerror", lambda e: errs.append(str(e)))
         pg.goto(URL)
-        pg.wait_for_selector(".item")
+        pg.wait_for_selector(".lead")
         over = pg.evaluate("document.documentElement.scrollWidth > innerWidth")
         pg.screenshot(path=f"shots/{name}-top.png")
         pg.locator("#subscribe").scroll_into_view_if_needed()

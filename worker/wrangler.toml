@@ -5,8 +5,8 @@ workers_dev = true
 
 # Production values are set at deploy time; local dev overrides live in .dev.vars
 [vars]
-ALLOW_ORIGINS = "https://webgrs.github.io"
-SITE_URL = "https://webgrs.github.io/uw-digest"
+ALLOW_ORIGINS = "https://webgrs.github.io,https://news.madisonstudents.com"
+SITE_URL = "https://news.madisonstudents.com"
 API_URL = "https://uw-news-digest.uw-course-api.workers.dev"
 MAIL_FROM = "UW Digest <digest@example.com>"
 

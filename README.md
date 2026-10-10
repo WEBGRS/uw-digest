@@ -1,6 +1,6 @@
 # UW Digest
 
-A daily digest of UW-Madison news, ranked by importance for students and summarized in Chinese. Visitors can subscribe by email and choose topics, frequency (daily / weekly / monthly) and a minimum importance level.
+A daily digest of UW-Madison news, ranked by importance for students and summarized in Chinese. Live at **https://news.madisonstudents.com**. Visitors can subscribe by email and choose topics, frequency (daily / weekly / monthly) and a minimum importance level.
 
 ## How it works
 

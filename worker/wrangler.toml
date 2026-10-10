@@ -5,16 +5,16 @@ workers_dev = true
 
 # Production values are set at deploy time; local dev overrides live in .dev.vars
 [vars]
-ALLOW_ORIGINS = "http://localhost:8820,http://127.0.0.1:8820"
-SITE_URL = "http://localhost:8820"
-API_URL = "http://localhost:8821"
+ALLOW_ORIGINS = "https://webgrs.github.io"
+SITE_URL = "https://webgrs.github.io/uw-digest"
+API_URL = "https://uw-news-digest.uw-course-api.workers.dev"
 MAIL_FROM = "UW Digest <digest@example.com>"
 
 # Secrets: RESEND_API_KEY (unset = emails go to the outbox table), ADMIN_TOKEN
 [[d1_databases]]
 binding = "DB"
 database_name = "uw-news-digest"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "f9662c15-93c5-431e-abc6-40e82d560943"
 
 # 15:00 UTC, after the morning local build has been published
 [triggers]

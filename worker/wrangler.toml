@@ -8,7 +8,7 @@ workers_dev = true
 ALLOW_ORIGINS = "https://webgrs.github.io,https://news.madisonstudents.com"
 SITE_URL = "https://news.madisonstudents.com"
 API_URL = "https://uw-news-digest.uw-course-api.workers.dev"
-MAIL_FROM = "UW Digest <digest@example.com>"
+MAIL_FROM = "UW Digest <digest@news.madisonstudents.com>"
 
 # Secrets: RESEND_API_KEY (unset = emails go to the outbox table), ADMIN_TOKEN
 [[d1_databases]]

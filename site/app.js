@@ -5,8 +5,8 @@ const I18N = {
   en: {
     tagline: "UW-Madison news digest",
     getEmail: "Get by email",
-    h1: "What happened at UW-Madison, ranked.",
-    lede: "Fourteen official and local sources, checked every morning. Each item is rated 1–5 for students and summarized in a line or two.",
+    mast: ["Today at ", "UW-Madison"],
+    topPicks: "Top picks",
     all: "All",
     show: "Show",
     impAll: "All items",
@@ -23,7 +23,7 @@ const I18N = {
     mailLang: "Email language",
     importance: "Importance",
     subscribe: "Subscribe",
-    foot: "Summaries are written by AI from each article's title and excerpt; the linked original is authoritative. Not affiliated with UW-Madison.",
+    foot: "14 official and local sources, checked every morning; items rated 1–5 for students. Summaries are written by AI from each article's title and excerpt; the linked original is authoritative. Not affiliated with UW-Madison.",
     updated: (t, n) => `Updated ${t} · ${n} items in the last 60 days`,
     due: "due",
     empty: "Nothing at this level yet. Try a lower importance filter.",
@@ -41,8 +41,8 @@ const I18N = {
   zh: {
     tagline: "威大消息汇总",
     getEmail: "邮件订阅",
-    h1: "威斯康星大学麦迪逊分校,最近都发生了什么",
-    lede: "每天早上检查 14 个官方和本地来源。每条消息按对学生的重要性打 1–5 分,并用一两句话概括。",
+    mast: ["", "威大", "今日消息"],
+    topPicks: "重点",
     all: "全部",
     show: "显示",
     impAll: "全部消息",
@@ -59,7 +59,7 @@ const I18N = {
     mailLang: "邮件语言",
     importance: "重要程度",
     subscribe: "订阅",
-    foot: "摘要由 AI 根据原文标题和摘录整理,以原文为准。本站与威斯康星大学无隶属关系。",
+    foot: "每天早上检查 14 个官方和本地来源,按对学生的重要性打 1–5 分。摘要由 AI 根据原文标题和摘录整理,以原文为准。本站与威斯康星大学无隶属关系。",
     updated: (t, n) => `更新于 ${t} · 近 60 天共 ${n} 条`,
     due: "截止",
     empty: "这个级别暂时没有内容,可以调低重要程度。",
@@ -86,6 +86,7 @@ const el = (tag, cls, text) => {
   if (text != null) n.textContent = text;
   return n;
 };
+const catColor = (k) => `var(--c-${k}, var(--ink))`;
 const catLabel = (k) => ((state.lang === "zh" ? state.digest.categories_zh : state.digest.categories) || state.digest.categories)[k] || k;
 
 function initialLang() {
@@ -100,20 +101,63 @@ function dayLabel(d) {
   return new Date(d + "T12:00:00").toLocaleDateString(t("locale"), { weekday: "long", month: "short", day: "numeric" });
 }
 
+function renderMast() {
+  const h = $("mast");
+  h.replaceChildren();
+  const [a, b, c] = t("mast");
+  h.append(document.createTextNode(a));
+  const em = el("em", null, b);
+  h.append(em);
+  if (c) h.append(document.createTextNode(c));
+}
+
+// Newest high-importance items, shown above the feed when no category filter is set
+function pickItems() {
+  const out = [];
+  for (const day of state.digest.days.slice(0, 2)) for (const it of day.items) if (it.importance >= 4) out.push(it);
+  return out.slice(0, 3);
+}
+
 function render() {
   const feed = $("feed");
   feed.replaceChildren();
   if (!state.digest) return;
   const en = state.lang === "en";
+  const picks = state.cat === "all" ? pickItems() : [];
+  const pickIds = new Set(picks.map((p) => p.id));
+  const grid = $("pickgrid");
+  grid.replaceChildren();
+  for (const it of picks) {
+    const card = el("article", "pick");
+    card.style.setProperty("--cat", catColor(it.category));
+    const meta = el("div", "meta");
+    const tag = el("span", "tag", catLabel(it.category));
+    tag.style.setProperty("--cat", catColor(it.category));
+    meta.append(tag);
+    if (it.deadline) meta.append(el("span", "due", `${t("due")} ${it.deadline}`));
+    const h = el("h3");
+    const a = el("a", "stretch", en ? it.title : it.zh_title);
+    a.href = safeUrl(it.url);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    h.append(a);
+    card.append(meta, h, el("p", null, en ? it.en_points || it.zh_points : it.zh_points));
+    grid.append(card);
+  }
+  $("picks").hidden = picks.length === 0;
   let shown = 0;
   for (const day of state.digest.days) {
-    const items = day.items.filter((i) => (state.cat === "all" || i.category === state.cat) && i.importance >= state.min);
+    const items = day.items.filter((i) => !pickIds.has(i.id) && (state.cat === "all" || i.category === state.cat) && i.importance >= state.min);
     if (!items.length) continue;
     const sec = el("section", "day");
     sec.append(el("h2", null, dayLabel(day.date)));
     for (const it of items) {
       const row = el("article", "item");
-      row.append(el("div", "score s" + it.importance, it.importance + " / 5"));
+      const meter = el("div", "meter s" + it.importance);
+      const dots = el("div", "dots");
+      for (let n = 1; n <= 5; n++) dots.append(el("b", n <= it.importance ? "on" : ""));
+      meter.append(dots, el("span", null, it.importance + " / 5"));
+      row.append(meter);
       const body = el("div");
       const h = el("h3");
       const a = el("a", null, en ? it.title : it.zh_title);
@@ -123,9 +167,11 @@ function render() {
       h.append(a);
       body.append(h, el("p", null, en ? it.en_points || it.zh_points : it.zh_points));
       const meta = el("div", "meta");
-      meta.append(el("span", "tag", catLabel(it.category)));
-      meta.append(document.createTextNode(en ? it.source : it.source + " · " + it.title));
-      if (it.deadline) meta.append(el("span", "due", `  · ${t("due")} ${it.deadline}`));
+      const tg = el("span", "tag", catLabel(it.category));
+      tg.style.setProperty("--cat", catColor(it.category));
+      meta.append(tg);
+      meta.append(el("span", null, en ? it.source : it.source + " · " + it.title));
+      if (it.deadline) meta.append(el("span", "due", `${t("due")} ${it.deadline}`));
       body.append(meta);
       row.append(body);
       sec.append(row);
@@ -140,7 +186,13 @@ function buildFilters() {
   const cats = $("cats");
   cats.replaceChildren();
   const mk = (key, label) => {
-    const b = el("button", "chip", label);
+    const b = el("button", "chip");
+    if (key !== "all") {
+      const dot = el("i");
+      dot.style.setProperty("--cat", catColor(key));
+      b.append(dot);
+    }
+    b.append(document.createTextNode(label));
     b.type = "button";
     b.dataset.cat = key;
     b.setAttribute("aria-pressed", String(key === state.cat));
@@ -159,13 +211,13 @@ function buildFilters() {
   const first = sub.children.length === 0;
   sub.replaceChildren();
   for (const k of Object.keys(state.digest.categories)) {
-    const l = el("label");
+    const l = el("label", "pill");
     const i = el("input");
     i.type = "checkbox";
     i.name = "categories";
     i.value = k;
     i.checked = first || ticked.has(k);
-    l.append(i, document.createTextNode(catLabel(k)));
+    l.append(i, el("span", null, catLabel(k)));
     sub.append(l);
   }
 }
@@ -174,6 +226,7 @@ function applyLang() {
   document.documentElement.lang = state.lang === "zh" ? "zh-CN" : "en";
   document.querySelectorAll("[data-i18n]").forEach((n) => (n.textContent = t(n.dataset.i18n)));
   $("email").placeholder = t("placeholder");
+  renderMast();
   document.querySelectorAll(".lg").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)));
   // Mail language follows the page until the visitor picks one
   if (!state.mailLangTouched) document.querySelector(`input[name="lang"][value="${state.lang}"]`).checked = true;

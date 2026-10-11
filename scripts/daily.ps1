@@ -1,4 +1,4 @@
-# Daily pipeline: fetch -> judge (claude -p) -> validate/build -> TODO actions. ASCII only.
+# Daily pipeline: fetch -> judge (claude -p) -> validate/build -> TODO actions -> publish. ASCII only.
 $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 Set-Location $root
@@ -23,6 +23,8 @@ try {
     } else {
         Write-Output "nothing new"
     }
+    # Push data commits so the live site updates
+    & "$PSScriptRoot\publish.ps1" -Day $day
 } catch {
     Write-Output "FAILED: $_"
     '' | powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\ghs\.claude\notify-done.ps1" -Title "uw-news-digest FAILED" -Message ("$_".Substring(0, [Math]::Min(200, "$_".Length))) 2>$null

@@ -15,7 +15,9 @@ try {
         $k = 2
         while (Test-Path "data\digest\$out") { $out = "$day-r$k.json"; $k++ }
         $prompt = (Get-Content "scripts\judge_prompt.md" -Raw -Encoding UTF8).Replace("{DATE}", $day).Replace("{OUT}", $out)
-        claude -p $prompt --allowedTools "Read" "Write" --permission-mode acceptEdits
+        # Prompt via stdin as UTF-8 (PS 5.1 breaks args with embedded quotes)
+        $OutputEncoding = New-Object System.Text.UTF8Encoding $false
+        $prompt | claude -p --allowedTools "Read" "Write" --permission-mode acceptEdits
         if ($LASTEXITCODE -ne 0) { throw "judge failed ($LASTEXITCODE)" }
         python scripts\build.py
         if ($LASTEXITCODE -ne 0) { throw "build failed ($LASTEXITCODE)" }

@@ -6,12 +6,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T13:30:00-05:00",
     "category": "events",
-    "zh_title": "DoIT GitLab 线上答疑时间",
-    "zh_points": "10/12 下午 1:30–2 点在 Teams 线上答疑，主题是 DoIT 的 GitLab 服务；用学校 GitLab 做课程或科研项目的同学可来提问。",
-    "en_points": "Online Teams office hours, 1:30–2 p.m. Oct 12, for questions about DoIT's GitLab service (git.doit.wisc.edu). Useful if you host course or research code there.",
-    "importance": 1,
+    "zh_title": "DoIT GitLab 服务线上答疑",
+    "zh_points": "10/12 13:30–14:00 在 Teams 线上答疑，解答校内 GitLab（git.doit.wisc.edu）使用问题，课程或科研用到可参加。",
+    "en_points": "Online Teams office hours on Oct 12, 1:30–2 p.m., for questions about DoIT's GitLab service (git.doit.wisc.edu). Useful if a course or lab uses it.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "a804dfcbaea7",
@@ -20,12 +21,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T12:00:00-05:00",
     "category": "events",
-    "zh_title": "和平队招募咨询台 10/12 开放",
-    "zh_points": "10/12 中午–2 点，招募官在 Morgridge Hall 学生公共区解答 27 个月海外志愿服务和申请材料问题；和平队只招美国公民，国际生不适用。",
-    "en_points": "A campus recruiter answers questions about 27-month Peace Corps service and applications, noon–2 p.m. Oct 12 in Morgridge Hall's Student Commons. U.S. citizens only.",
+    "zh_title": "Peace Corps 和平队招募咨询",
+    "zh_points": "10/12 12:00–14:00 在 Blank Student Commons 设点，介绍为期27个月的海外志愿服务，并可帮看申请材料。",
+    "en_points": "A Peace Corps recruiter is at the Rebecca M. Blank Student Commons, Morgridge Hall, Oct 12, noon–2 p.m., to discuss 27-month service abroad and help with applications.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "6e6917924a3c",
@@ -34,12 +36,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T12:00:00-05:00",
     "category": "events",
-    "zh_title": "讲座：策兰、达尔维什与德里达",
-    "zh_points": "10/12 中午–1:15 在 Ingraham Hall 206 室，圣母大学博士后 Peter Makhlouf 借策兰等人谈诗歌、时间与暴力；文学方向可旁听。",
-    "en_points": "Notre Dame postdoc Peter Makhlouf reads Celan, Darwish and Derrida on poetry, time and violence, noon–1:15 p.m. Oct 12 in 206 Ingraham Hall.",
-    "importance": 1,
+    "zh_title": "人文讲座：诗歌与“灾难性的迟到”",
+    "zh_points": "圣母大学博士后 Peter Makhlouf 从 Celan、Darwish、Derrida 谈诗歌与时间；10/12 中午，Ingraham 206，偏文学哲学。",
+    "en_points": "Notre Dame postdoc Peter Makhlouf reflects on poetry and time through Celan, Darwish and Derrida. Oct 12, noon–1:15 p.m., 206 Ingraham Hall.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "6c942fc5624f",
@@ -48,12 +51,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T10:45:00-05:00",
     "category": "events",
-    "zh_title": "护理学院：提前规划明年暑期实践",
-    "zh_points": "10/12 上午 10:45 在 Cooper Hall 1331 室讲如何规划明年暑期 externship、immersion 等实践；TBSN1 护理生可参加。",
-    "en_points": "Nursing session for TBSN1 students on planning summer experience, including externships and immersions, 10:45–11:30 a.m. Oct 12 in 1331 Signe Skott Cooper Hall.",
+    "zh_title": "护理学院：明年暑期实习与沉浸项目规划",
+    "zh_points": "护理学院讲解明年暑期 externship、immersion 等积累经验的方式；10/12 上午 10:45，Cooper Hall 1331。",
+    "en_points": "Nursing session on planning next summer: externships, immersions and other ways to gain experience. Oct 12, 10:45–11:30 a.m., 1331 Signe Skott Cooper Hall.",
     "importance": 2,
     "deadline": null,
-    "action": "TBSN1 同学 10/12 10:45 到场"
+    "action": null,
+    "drop": false
   },
   {
     "id": "f89d68721bf5",
@@ -63,11 +67,12 @@
     "published": "2026-10-12T10:30:00-05:00",
     "category": "health-safety",
     "zh_title": "Badger Supports 同伴支持开放时段",
-    "zh_points": "10/12 上午 10:30–下午 1 点在 SAC 3203 室学生心理健康中心，提供不评判的同伴支持，可咨询校园资源；有压力想找人聊可去。",
-    "en_points": "Badger Supports holds judgment-free peer support drop-in hours, 10:30 a.m.–1 p.m. Oct 12 at the Student Mental Health Hub, SAC Room 3203. Ask about campus resources.",
-    "importance": 2,
+    "zh_points": "10/12 10:30–13:00 在 SAC 3203 学生心理健康中心，可咨询校园资源、了解心理支持活动，无需预约、氛围轻松。",
+    "en_points": "Drop-in peer support at the Student Mental Health Hub (SAC Rm. 3203), Oct 12, 10:30 a.m.–1 p.m. Ask about campus resources in a judgment-free space.",
+    "importance": 3,
     "deadline": null,
-    "action": "10/12 10:30–13:00 到 SAC 3203 室"
+    "action": null,
+    "drop": false
   },
   {
     "id": "e6d88c68edd8",
@@ -76,12 +81,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T10:00:00-05:00",
     "category": "events",
-    "zh_title": "小企业讲座：如何借助远程助理分担工作",
-    "zh_points": "10/12 上午 10–11:15 线上，小企业发展中心（SBDC）讲何时该雇远程助理、为何要学会授权，以及外包与雇员的区别；创业同学可听。",
-    "en_points": "Online SBDC session, 10–11:15 a.m. Oct 12, on when to add virtual support staff, why delegation matters, and contracting virtual staff versus hiring employees.",
+    "zh_title": "小企业讲座：如何借助虚拟团队分担工作",
+    "zh_points": "小企业发展中心 (SBDC) 线上讲座，谈何时聘用虚拟助理及外包与雇员的区别；主要面向创业者，与多数学生关系不大。",
+    "en_points": "Online SBDC workshop, Oct 12, 10–11:15 a.m., on when to add virtual support staff and how contracting differs from hiring. Aimed at business owners.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "0ea5c8c34831",
@@ -90,12 +96,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T08:30:00-05:00",
     "category": "events",
-    "zh_title": "WIMR 视觉画廊“色彩力量”展",
-    "zh_points": "8 位艺术家用色彩吸引注意、传递情感，10/12 上午 8:30–下午 5 点在 WIMR 9 楼视觉画廊展出；路过医学园区可顺道看看。",
-    "en_points": "Eight artists use color to draw attention, stir emotion and convey meaning in COLOR POWER, open 8:30 a.m.–5 p.m. Oct 12 in WIMR's 9th-floor Vision Gallery.",
-    "importance": 1,
+    "zh_title": "WIMR 视觉画廊“COLOR POWER”色彩展",
+    "zh_points": "八位艺术家以色彩表达情绪与意义的作品展，位于医学研究所 WIMR 9 楼视觉画廊；10/12 8:30–17:00 开放。",
+    "en_points": "Eight artists use color to evoke emotion and meaning at the 9th-floor Vision Gallery, Wisconsin Institutes for Medical Research. Open Oct 12, 8:30 a.m.–5 p.m.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "3f94f19cb03e",
@@ -104,12 +111,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T00:00:00-05:00",
     "category": "events",
-    "zh_title": "艺术研究生校友展：Mosse 7 号画廊",
-    "zh_points": "10/12–18 展出 1986–2026 年 UW 艺术类研究生校友作品，共 123 位艺术家、3 个画廊；本条为 Mosse 人文楼 7 号画廊。",
-    "en_points": "Exhibition of work by 123 artists who earned UW–Madison graduate arts degrees from 1986 to 2026, Oct 12–18; this listing is Gallery 7 in the Mosse Humanities Building.",
-    "importance": 1,
+    "zh_title": "艺术研究生校友40年作品展",
+    "zh_points": "1986–2026 年 UW 艺术类研究生校友近作展，分设三个画廊（含 Mosse 人文楼 Gallery 7），10/12–18 开放。",
+    "en_points": "Recent work by people who earned UW–Madison graduate arts degrees in 1986–2026, shown across three galleries incl. Gallery 7, Mosse Humanities. Oct 12–18.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "94d469342ba5",
@@ -118,12 +126,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T00:00:00-05:00",
     "category": "events",
-    "zh_title": "艺术研究生校友展：Art Lofts 画廊",
-    "zh_points": "同一校友展的另一场地：Art Lofts 画廊和 Backspace 画廊，10/12–18 展出，此条写 110 位艺术家参展；作品含艺术品和人生成就海报。",
-    "en_points": "Second venue of the same alumni show, Oct 12–18 at the Art Lofts and Backspace galleries; this listing cites 110 artists. Includes artworks and posters on other life work.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "aa52e3268a09",
@@ -132,12 +141,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-12T00:00:00-05:00",
     "category": "academics",
-    "zh_title": "研究生项目线上开放日，开放到 10/31",
-    "zh_points": "10 月 1–31 日可登录线上开放日网站，听招生顾问讲申请流程和 UW 研究生资源；考虑在 UW 读研的同学 10/31 前去看。",
-    "en_points": "The Graduate Programs Virtual Open House site is open Oct 1–31: enrollment coaches cover the application process and grad student resources. Visit before Oct 31.",
-    "importance": 2,
-    "deadline": "2026-10-31",
-    "action": "10/31 前登录开放日网站"
+    "zh_title": "研究生项目线上开放日（10月全月）",
+    "zh_points": "10/1–31 可访问线上开放日网站，了解 UW 研究生申请流程与配套资源；考虑在 UW 读研的同学可看看。",
+    "en_points": "Virtual open house site runs Oct 1–31: enrollment coaches explain the application process and grad student resources. Useful if considering grad school.",
+    "importance": 3,
+    "deadline": null,
+    "action": null,
+    "drop": false
   },
   {
     "id": "6700671a467e",
@@ -146,12 +156,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-11T18:00:00-05:00",
     "category": "health-safety",
-    "zh_title": "RCC 性暴力援助开放时段，今晚 6–9 点",
-    "zh_points": "10/11 晚 6–9 点可到 Helen C. White 2191D 室或上 Zoom，与倡导员聊性暴力相关问题和校园资源；需要帮助可直接去。",
-    "en_points": "Rape Crisis Center advocates hold drop-in hours 6–9 p.m. Oct 11 in 2191D Helen C. White Hall (College Library) and on Zoom for anything related to sexual violence.",
-    "importance": 2,
+    "zh_title": "RCC 性暴力援助咨询时段",
+    "zh_points": "10/11 18:00–21:00，可到 College Library 2191D 或线上 Zoom 与援助人员交谈，咨询性暴力相关问题与校内资源。",
+    "en_points": "Talk with an RCC advocate about sexual violence or campus resources, Oct 11, 6–9 p.m., in 2191D College Library (Helen C. White Hall) or on Zoom.",
+    "importance": 3,
     "deadline": null,
-    "action": "需要时 10/11 18–21 点去 2191D 或 Zoom"
+    "action": null,
+    "drop": false
   },
   {
     "id": "eb02e1726482",
@@ -160,12 +171,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-11T17:00:00-05:00",
     "category": "events",
-    "zh_title": "Union South 桌游电玩之夜",
-    "zh_points": "10/11 下午 5–9 点在 Union South Prairie Fire，可玩桌游、电玩和 VR，一个人去也能找到同伴；借游戏须带 Wiscard。",
-    "en_points": "Board, video and VR games 5–9 p.m. Oct 11 at Prairie Fire, Union South; come solo to find a group. Bring your Wiscard to check out games.",
+    "zh_title": "WUD 游戏之夜：桌游、电玩、VR",
+    "zh_points": "10/11 17:00–21:00，Union South Prairie Fire；桌游、电玩、VR 都有，一个人去也能组局，借游戏需带 Wiscard。",
+    "en_points": "Board, video and VR game night at Prairie Fire, Union South, Oct 11, 5–9 p.m. Come solo or with friends; bring your Wiscard to check out games.",
     "importance": 2,
     "deadline": null,
-    "action": "带 Wiscard 去借游戏"
+    "action": null,
+    "drop": false
   },
   {
     "id": "a39352000c1d",
@@ -174,12 +186,13 @@
     "source": "The Badger Herald",
     "published": "2026-10-11T15:40:06+00:00",
     "category": "campus",
-    "zh_title": "Badger Herald：电子舞曲的演变",
-    "zh_points": "学生报文艺稿：EDM 起源于 80 年代末芝加哥、底特律的地下俱乐部，后成为大学派对标配，如今出现“女孩 EDM”并回归本源；休闲阅读。",
-    "en_points": "Badger Herald arts piece tracing EDM from late-1980s Chicago and Detroit underground clubs to college parties, and its turn toward 'girl EDM' and its roots.",
+    "zh_title": "校报文化评论：电子舞曲的演变",
+    "zh_points": "《Badger Herald》文艺评论：回顾 EDM 从80年代末地下俱乐部到大学派对的演变，并谈“girl EDM”兴起与回归本源。",
+    "en_points": "Badger Herald arts piece tracing EDM from late-1980s underground clubs in Chicago and Detroit to college parties, and its recent turn back toward its roots.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "db7ebd274930",
@@ -188,12 +201,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-11T14:00:00-05:00",
     "category": "events",
-    "zh_title": "男子足球俱乐部主场对阵 Michigan Tech",
-    "zh_points": "10/11 下午 2–4 点在 Bruce Family 运动场 9 号场比赛，学生俱乐部队，可去现场加油。",
-    "en_points": "The Wisconsin Men's Soccer Club plays Michigan Tech 2–4 p.m. Oct 11 on Field 9 at the Bruce Family Recreation Fields.",
+    "zh_title": "男子足球俱乐部迎战 Michigan Tech",
+    "zh_points": "UW 男子足球俱乐部 10/11 14:00 在 Bruce Family 运动场 9 号场迎战 Michigan Tech，可去观赛。",
+    "en_points": "The Wisconsin Men's Soccer Club plays Michigan Tech, Oct 11, 2–4 p.m., at Field 9, Bruce Family Recreation Fields.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "9ab67125aa0f",
@@ -202,12 +216,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-11T14:00:00-05:00",
     "category": "events",
-    "zh_title": "纪念联合会苔玉手作课下午场，65 美元",
-    "zh_points": "10/11 下午 2–3:30 在 Memorial Union Studio G 做日式苔玉（苔藓包根的植物摆件），材料和植物全包，收费 65 美元。",
-    "en_points": "Make a kokedama, a Japanese moss-ball plant display, 2–3:30 p.m. Oct 11 in Memorial Union's Studio G; $65 covers plants and all materials. Expect to get messy.",
-    "importance": 1,
+    "zh_title": "Memorial Union 苔玉盆景手作课",
+    "zh_points": "10/11 14:00–15:30 在 Memorial Union Studio G 制作苔玉 (kokedama)，材料和植物全包，收费 $65。",
+    "en_points": "Make a kokedama (moss-wrapped plant ball) at Studio G, Memorial Union, Oct 11, 2–3:30 p.m. All materials and plants included; cost $65.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "9978631ca3a9",
@@ -216,12 +231,13 @@
     "source": "Today @ Wisconsin",
     "published": "2026-10-11T13:00:00-05:00",
     "category": "events",
-    "zh_title": "Steenbock 自我关怀周日：迷你南瓜彩绘",
-    "zh_points": "10/11 下午 1–5 点在 Steenbock 图书馆 STEM Commons（126 室）装饰迷你南瓜，有热饮，随来随走；学累了可去放松。",
-    "en_points": "Decorate mini pumpkins with warm drinks at STEM Commons (Room 126), Steenbock Library, any time 1–5 p.m. Oct 11; stay as long as you like. A different craft each week.",
-    "importance": 1,
+    "zh_title": "Steenbock 自我关怀周日：迷你南瓜装饰",
+    "zh_points": "10/11 13:00–17:00 在 Steenbock Library STEM Commons（126 室），有热饮和手工，可随时来、待多久都行。",
+    "en_points": "Drop in at STEM Commons (Room 126), Steenbock Library, Oct 11, 1–5 p.m., for warm drinks and mini pumpkin decorating; stay as long as you like.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "14758beed4cb",
@@ -230,12 +246,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:39:00-05:00",
     "category": "campus",
-    "zh_title": "UW-Madison 研究者获诺贝尔物理学奖",
-    "zh_points": "Channel 3000 视频标题称一名 UW-Madison 研究者获得诺贝尔物理学奖；摘要只有版权声明，获奖者和研究内容需看原视频或学校公告。",
-    "en_points": "Per a Channel 3000 video headline, a UW-Madison researcher has won the Nobel Prize in physics. The excerpt is only a copyright notice; watch the video for who and why.",
+    "zh_title": "UW-Madison 研究人员获诺贝尔物理学奖",
+    "zh_points": "Channel 3000 报道，一位 UW-Madison 研究人员获得诺贝尔物理学奖，是学校的重大科研荣誉；获奖者及研究内容详见原视频。",
+    "en_points": "Channel 3000 reports that a UW-Madison researcher has won the Nobel Prize in Physics, a major honor for the university. See the video for details.",
     "importance": 4,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "b1ec7a1e3921",
@@ -244,12 +261,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:39:00-05:00",
     "category": "city",
-    "zh_title": "Dane 县行政长官提出随身摄像头拨款案",
-    "zh_points": "据标题，Dane 县行政长官提出为执法记录仪拨款的方案；摘要只有版权声明，细节需看原视频。",
-    "en_points": "Per the headline, the Dane County executive has proposed funding for body cameras. The excerpt is only a copyright notice, so details are in the video.",
-    "importance": 1,
+    "zh_title": "Dane 县行政长官提出执法记录仪拨款方案",
+    "zh_points": "Dane 县行政长官提出为执法记录仪 (body camera) 拨款的方案；具体内容见原视频。",
+    "en_points": "The Dane County executive has proposed funding for body cameras. Details are in the Channel 3000 video.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "262ff19519e9",
@@ -258,12 +276,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:38:00-05:00",
     "category": "city",
-    "zh_title": "威州三项宪法修正案要点",
-    "zh_points": "Channel 3000 视频讲解威州三项宪法修正案；摘要只有版权声明。有投票资格的同学投票前可看原视频了解内容。",
-    "en_points": "Channel 3000 video explainer on Wisconsin's three constitutional amendments; the excerpt is only a copyright notice. Worth watching if you're eligible to vote.",
+    "zh_title": "威斯康星州三项宪法修正案要点",
+    "zh_points": "Channel 3000 解读威斯康星州三项宪法修正案的要点；有投票权的同学可了解，具体条款见原视频。",
+    "en_points": "Channel 3000 explains Wisconsin's three constitutional amendments. Worth a look if you vote in Wisconsin; details are in the video.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "3638b24ea074",
@@ -272,12 +291,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:36:37-05:00",
     "category": "city",
-    "zh_title": "专家提醒：假蜘蛛网装饰会缠死蝙蝠",
-    "zh_points": "野生动物专家警告，万圣节常用的假蜘蛛网弹性大，会缠住并致死蝙蝠、鸟类等动物；布置户外装饰时尽量别用。",
-    "en_points": "Wildlife experts warn that stretchy fake spider webs, a popular Halloween decoration, can trap and kill bats, birds and other animals. Skip them for outdoor decor.",
+    "zh_title": "万圣节假蜘蛛网装饰可能缠死蝙蝠",
+    "zh_points": "野生动物专家提醒，有弹性的假蜘蛛网装饰会缠住并致死蝙蝠、鸟类等动物；布置万圣节装饰时可考虑少用。",
+    "en_points": "Wildlife experts warn that stretchy fake spider-web Halloween decorations can trap and kill bats, birds and other animals. Consider skipping them.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "33347f007e80",
@@ -286,12 +306,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:36:30-05:00",
     "category": "city",
-    "zh_title": "Epstein 文件巡回书车停靠 Lewiston",
-    "zh_points": "一辆名为“Trump 与 Epstein 纪念书车”的车在全国巡回，开放给民众查阅已公开的 Epstein 文件，并讲述两人往来；外州新闻。",
-    "en_points": "The Donald J. Trump and Jeffrey Epstein Memorial Bookmobile tours the country letting visitors browse the released Epstein files; it stopped in Lewiston. Out-of-state news.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f5a39714c35e",
@@ -300,12 +321,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:36:30-05:00",
     "category": "city",
-    "zh_title": "明州 Anoka 河边百年小石屋的故事",
-    "zh_points": "明尼苏达州 Anoka 被称为“万圣节之都”，市中心附近 Rum 河边有座百年历史的奇特小石屋；外州趣闻，与校园无关。",
-    "en_points": "Anoka, Minnesota, known as the Halloween capital, also has an odd century-old stone house on the Rum River near downtown. Out-of-state feature.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "80f1f9755b5e",
@@ -314,12 +336,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:36:00-05:00",
     "category": "health-safety",
-    "zh_title": "威州可在线申请临时限制令（访谈）",
-    "zh_points": "家暴防治宣传月之际，威州法院系统简化临时限制令申请、增加线上渠道，州最高法院首席大法官 Karofsky 接受访谈说明。",
-    "en_points": "Video: Chief Justice Jill Karofsky on how Wisconsin courts are making temporary restraining orders easier to seek, including online, during Domestic Violence Awareness Month.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "069add317d7c",
@@ -328,12 +351,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:36:00-05:00",
     "category": "health-safety",
-    "zh_title": "威州法院开通临时限制令线上申请",
-    "zh_points": "适逢家暴防治宣传月，威州法院系统推出线上方式，让人更容易申请临时限制令；遭遇家暴、跟踪或骚扰时多了一条求助途径。",
-    "en_points": "As Domestic Violence Awareness Month begins, Wisconsin's court system adds an online option to make temporary restraining orders easier to seek.",
-    "importance": 2,
+    "zh_title": "威斯康星可在线申请临时限制令",
+    "zh_points": "家暴防治宣传月开始之际，威斯康星州法院系统推出临时限制令 (restraining order) 在线申请方式，让申请更便捷；遭遇家暴可了解此途径。",
+    "en_points": "As Domestic Violence Awareness Month begins, Wisconsin courts are making it easier to seek temporary restraining orders with an online option.",
+    "importance": 3,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "e9d540a20f12",
@@ -342,12 +366,13 @@
     "source": "WKOW",
     "published": "2026-10-11T10:35:52-05:00",
     "category": "city",
-    "zh_title": "胡塞武装袭击沙特机场，至少 12 死",
-    "zh_points": "据标题，胡塞武装大规模袭击沙特机场，至少 12 人死亡、数百人受伤；经中东转机的同学留意航班动态。",
-    "en_points": "Per the headline, a Houthi attack on a Saudi airport killed at least 12 and wounded hundreds. Check your flights if connecting through the Middle East.",
-    "importance": 2,
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
+    "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "fb5e070589c8",
@@ -356,12 +381,13 @@
     "source": "WKOW",
     "published": "2026-10-11T10:35:52-05:00",
     "category": "city",
-    "zh_title": "胡塞袭击沙特机场（利雅得配图）",
-    "zh_points": "同一报道的配图：10/10 利雅得哈立德国王国际机场路旁地铁站外聚集的人群；无新增信息。",
-    "en_points": "Photo from the same story: people gather outside a metro station on the road to Riyadh's King Khalid International Airport, Oct. 10. No new details.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "bf09ae98a5ed",
@@ -371,11 +397,12 @@
     "published": "2026-10-11T10:35:00-05:00",
     "category": "events",
     "zh_title": "林产品实验室 10/20 开放公众导览",
-    "zh_points": "林产品实验室（Forest Products Lab）10/20 办公众导览，介绍保护、制造方面的话题和科学家的在研项目；林学、材料、工程方向同学可关注。",
-    "en_points": "The Forest Products Lab offers a guided public tour Oct. 20 covering conservation, manufacturing and its scientists' current research. Good for forestry and engineering majors.",
+    "zh_points": "Forest Products Lab 将于 10/20 举办公众导览，介绍其科学家在保护、制造和研究方面的工作；对相关领域感兴趣可关注。",
+    "en_points": "The Forest Products Lab offers a guided public tour on Oct. 20 covering conservation, manufacturing and the research its scientists do.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "530e976dd313",
@@ -385,11 +412,12 @@
     "published": "2026-10-11T10:35:00-05:00",
     "category": "city",
     "zh_title": "独立选民在州选举中的作用",
-    "zh_points": "Channel 3000 视频分析独立选民对州选举的影响；摘要只有版权声明，细节需看原视频。",
-    "en_points": "Channel 3000 video on the role independent voters play in state elections. The excerpt is only a copyright notice; details are in the video.",
+    "zh_points": "Channel 3000 视频讨论独立选民在州选举中的作用；偏政治分析，有投票权的同学可选看。",
+    "en_points": "Channel 3000 video on the role independent voters play in state elections. Optional viewing for students who vote.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "83f7ba3e0196",
@@ -398,12 +426,13 @@
     "source": "Channel 3000",
     "published": "2026-10-11T10:33:37-05:00",
     "category": "city",
-    "zh_title": "假蜘蛛网装饰危害野生动物（文字版）",
-    "zh_points": "与配图同一报道：专家警告万圣节假蜘蛛网会缠死蝙蝠、鸟类等动物；本条摘要只有“点击查看更新”。",
-    "en_points": "Article version of the same story: experts warn fake Halloween spider webs can trap and kill bats and birds. The excerpt itself only says to click for updates.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "548ad42742c7",
@@ -412,12 +441,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T10:30:00-05:00",
     "category": "city",
-    "zh_title": "“凤凰行星”诞生于垂死恒星残骸",
-    "zh_points": "这颗“凤凰行星”被归为第二代行星：不是在新生恒星周围的物质盘中形成，而是由垂死恒星的残余物质聚成；天文爱好者可读。",
-    "en_points": "The 'phoenix planet' is classed as second-generation: it formed not from a newborn star's disk but from the leftovers of a dying star. A fun read for astronomy fans.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "ca5912cc2bfb",
@@ -425,13 +455,14 @@
     "url": "https://www.wkow.com/video/water-rescue-called-in-at-marshall-park-in-dane-county/video_166d9ffd-55f4-5b6f-a26e-532ae315c527.html",
     "source": "WKOW",
     "published": "2026-10-11T10:28:00-05:00",
-    "category": "city",
-    "zh_title": "Dane 县 Marshall Park 水上救援",
-    "zh_points": "WKOW 视频只有标题、无摘要：Marshall Park 发生水上救援；可能与 NBC15 报道的 Mendota 湖帆船翻船为同一事件。",
-    "en_points": "WKOW video with no excerpt about a water rescue at Marshall Park in Dane County; possibly the same incident as NBC15's Lake Mendota sailboat capsizing.",
+    "category": "health-safety",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "8767c1b81a23",
@@ -440,12 +471,13 @@
     "source": "NBC15",
     "published": "2026-10-11T10:24:50-05:00",
     "category": "city",
-    "zh_title": "华盛顿一周看点：特朗普赴俄亥俄、阿拉斯加助选",
-    "zh_points": "中期选举临近，特朗普本周赴俄亥俄和阿拉斯加为共和党候选人助选，副总统万斯去德州；俄亥俄参议员选战 Husted 与 Brown 胶着。",
-    "en_points": "Ahead of the midterms, Trump campaigns in Ohio and Alaska this week and VP JD Vance in Texas; Ohio's Senate race between Jon Husted and Sherrod Brown is tight.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "5a6ce30da188",
@@ -454,12 +486,13 @@
     "source": "WKOW",
     "published": "2026-10-11T10:03:05-05:00",
     "category": "city",
-    "zh_title": "特朗普称俄乌同意“能源停火”（配图）",
-    "zh_points": "配图页：特朗普 10/10 抵达安德鲁斯联合基地后对记者讲话；标题称他宣布俄乌已同意能源停火，详情见文字报道。",
-    "en_points": "Photo page: Trump speaks to reporters after landing at Joint Base Andrews on Oct. 10. The headline says he claims Russia and Ukraine agreed to an energy ceasefire.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "eea1a1cc2adb",
@@ -467,13 +500,14 @@
     "url": "https://madison.com/life-entertainment/local/events/article_ee4c347e-af0e-58ac-a885-1aafaea82198.html",
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T10:00:00-05:00",
-    "category": "city",
-    "zh_title": "Hawthorn Hollow 万圣节活动回归",
-    "zh_points": "Spooky Hollow 万圣节活动回归，10/23–24 晚 6–9 点在 Hawthorn Hollow 举行；该地在 Kenosha 县，离麦迪逊较远。",
-    "en_points": "Spooky Hollow, a seasonal Halloween event, returns to Hawthorn Hollow 6–9 p.m. Oct. 23–24 (Fri–Sat). It's in Kenosha County, a long drive from Madison.",
+    "category": "events",
+    "zh_title": "Hawthorn Hollow 万圣节主题活动",
+    "zh_points": "Spooky Hollow 万圣节主题活动 10/23–24（周五、周六）18:00–21:00 在 Hawthorn Hollow 举行。",
+    "en_points": "Spooky Hollow, a Halloween-themed event, returns to Hawthorn Hollow Oct. 23–24 (Fri–Sat), 6–9 p.m.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "10d254bcc3ee",
@@ -482,12 +516,13 @@
     "source": "WKOW",
     "published": "2026-10-11T09:45:26-05:00",
     "category": "city",
-    "zh_title": "特朗普称俄乌同意“能源停火”",
-    "zh_points": "CNN 报道，特朗普周日宣布俄罗斯和乌克兰已同意他所称的“能源停火”；国际新闻，与校园无直接关系。",
-    "en_points": "CNN reports President Trump announced Sunday that Russia and Ukraine have agreed to what he called an 'energy ceasefire.' World news, no direct campus impact.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "c1b4a9842cf9",
@@ -495,13 +530,14 @@
     "url": "https://madison.com/life-entertainment/nation-world/parenting/article_f50c8b28-2739-5838-8e72-f8bcdc26cfd4.html",
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T09:30:00-05:00",
-    "category": "health-safety",
-    "zh_title": "报告：ChatGPT 青少年防自杀机制未能通知家长",
-    "zh_points": "一份报告指 ChatGPT 针对青少年的自杀防护没能提醒家长；OpenAI 也发布了首份青少年使用报告。情绪低落时请找真人求助，如 UHS。",
-    "en_points": "A report finds ChatGPT's teen suicide safeguards failed to alert parents; OpenAI also released its first report on teen use. If you're struggling, reach a person, e.g. UHS.",
+    "category": "city",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f99364d63b29",
@@ -510,12 +546,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:50:00-05:00",
     "category": "city",
-    "zh_title": "漫画：麦迪逊什么能比州议会大厦高？",
-    "zh_points": "州报 Phil Hands 的时评漫画，借麦迪逊建筑不得高过州议会大厦的限高规定发问；无摘要，与学生生活关系不大。",
-    "en_points": "Phil Hands editorial cartoon riffing on Madison's Capitol height limit for buildings. No excerpt; little practical impact on students.",
+    "zh_title": "Phil Hands 漫画：什么能高过州议会大厦",
+    "zh_points": "《威斯康星州报》时事漫画，话题是麦迪逊有什么能比州议会大厦更高；属观点类内容。",
+    "en_points": "Wisconsin State Journal editorial cartoon on what is allowed to stand taller than the Capitol in Madison. Opinion content.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "bc9d666884ec",
@@ -524,12 +561,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:30:00-05:00",
     "category": "city",
-    "zh_title": "一周新闻小测验",
-    "zh_points": "州报每周新闻小测验，涉及特朗普政府与一所大学的纠纷、法国各地和美国校园的抗议等；可借此回顾本周大事。",
-    "en_points": "Weekly news quiz covering a Trump administration dispute with a university, protests across France and on U.S. campuses, and other headlines.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "e64b86f069b8",
@@ -538,12 +576,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Emer A.",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Emer Jeanette A.（Jan）；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Emer Jeanette A. ('Jan'). No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "72b262cd7802",
@@ -552,12 +591,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：James Acker",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 James（Jim）Acker；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, James 'Jim' Acker. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "8d54d5489b0f",
@@ -566,12 +606,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Russel Bauer",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Russel L. Bauer；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Russel L. Bauer. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f95d02398b64",
@@ -580,12 +621,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Bradley Beal",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Bradley L. Beal；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Bradley L. Beal. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "d5ec271645d1",
@@ -594,12 +636,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Jeffrey Boley",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Jeffrey L. Boley；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Jeffrey L. Boley. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "8116d6cbd2e7",
@@ -608,12 +651,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Sonya Brakmanis",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Sonya May Brakmanis；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Sonya May Brakmanis. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "8429d34e3d98",
@@ -622,12 +666,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Jonathan Campbell",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Jonathan James Campbell；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Jonathan James Campbell. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "29a5693db03b",
@@ -636,12 +681,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Marie Eide",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Marie Anabell (Van Domelen) Eide；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Marie Anabell (Van Domelen) Eide. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "b1dc9fae4395",
@@ -650,12 +696,13 @@
     "source": "Wisconsin State Journal",
     "published": "2026-10-11T08:00:27-05:00",
     "category": "city",
-    "zh_title": "讣告：Janet Griesel",
-    "zh_points": "州报讣告页，摘要只有逝者姓名 Janet Marie (Keen) Griesel；与校园无关。",
-    "en_points": "State Journal obituary; the excerpt gives only the name, Janet Marie (Keen) Griesel. No campus link.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "c2509258584f",
@@ -664,12 +711,13 @@
     "source": "WKOW",
     "published": "2026-10-11T07:43:00-05:00",
     "category": "city",
-    "zh_title": "州议会广场电动车展，车主现身说法",
-    "zh_points": "州议会广场举办电动车博览会，让好奇的司机直接向电动车车主请教；摘要只重复标题，时间等细节见原视频。",
-    "en_points": "An EV Expo on Capitol Square connects curious drivers with electric car owners. The excerpt repeats the headline; see the video for details.",
-    "importance": 1,
+    "zh_title": "州议会广场举办电动车展",
+    "zh_points": "电动车博览会 (EV Expo) 在州议会广场举行，让感兴趣的司机与电动车车主面对面交流。",
+    "en_points": "An EV Expo on Capitol Square lets curious drivers talk with electric car owners.",
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "a9a8b46b1e4e",
@@ -678,12 +726,13 @@
     "source": "WKOW",
     "published": "2026-10-11T07:43:00-05:00",
     "category": "city",
-    "zh_title": "Monona 社区助力成人学生上大学",
-    "zh_points": "WKOW 视频：Monona 社区帮助成年人重返校园读大学；摘要只重复标题，无更多细节。",
-    "en_points": "WKOW video: the Monona community helps adult students pursue college. The excerpt only repeats the headline.",
+    "zh_title": "Monona 社区帮助成人学生读大学",
+    "zh_points": "WKOW 视频报道 Monona 社区为成年学生上大学提供帮助，具体做法见原视频。",
+    "en_points": "WKOW video on a Monona community effort to help adult students with college.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "3c20394dc987",
@@ -691,13 +740,14 @@
     "url": "https://www.wkow.com/video/half-pint-resale-returns-to-alliant-energy-center-with-50-000-items-for-growing-families/video_06980dc2-d144-5fb3-a03d-edc3fde89942.html",
     "source": "WKOW",
     "published": "2026-10-11T07:40:00-05:00",
-    "category": "money",
-    "zh_title": "Half-Pint 母婴二手市集回归",
-    "zh_points": "Half-Pint 儿童用品二手市集回到 Alliant Energy Center，约 5 万件商品；有孩子的学生家庭可去淘货，日期见原视频。",
-    "en_points": "Half-Pint Resale returns to the Alliant Energy Center with 50,000 items for growing families. Student parents may find bargains; see the video for dates.",
+    "category": "city",
+    "zh_title": "Half-Pint 儿童用品转卖会回归",
+    "zh_points": "Half-Pint Resale 回到 Alliant Energy Center，约 5 万件面向成长中家庭的物品出售；有孩子的学生家庭可留意。",
+    "en_points": "Half-Pint Resale is back at the Alliant Energy Center with 50,000 items for growing families. Mainly relevant to student parents.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "c78128a554f7",
@@ -706,12 +756,13 @@
     "source": "WKOW",
     "published": "2026-10-11T07:17:00-05:00",
     "category": "city",
-    "zh_title": "晴天和高温还会持续（图）",
-    "zh_points": "WKOW 天气图片页，标题称晴天和高温还会持续，无正文；具体温度见同日 NBC15 预报。",
-    "en_points": "WKOW weather photo page saying more sun and hot temperatures are ahead, with no text; see NBC15's forecast for numbers.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "4865ae0a981e",
@@ -720,12 +771,13 @@
     "source": "WKOW",
     "published": "2026-10-11T07:17:00-05:00",
     "category": "city",
-    "zh_title": "晴热好天气，适合看威州比赛",
-    "zh_points": "WKOW 天气预报，标题称今天晴朗炎热、适合观看威州体育赛事；摘要只有“Madison”，具体数字见 NBC15 预报。",
-    "en_points": "WKOW forecast: a sunny, hot day to watch Wisconsin sports. The excerpt only says 'Madison'; see NBC15's forecast for temperatures.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "887b88a6296c",
@@ -734,12 +786,13 @@
     "source": "NBC15",
     "published": "2026-10-11T06:48:57-05:00",
     "category": "city",
-    "zh_title": "特朗普提议给大西洋或太平洋改名",
-    "zh_points": "特朗普周六在田纳西集会上提议把大西洋或太平洋改名，如“特朗普洋”；报道称他去年已把墨西哥湾改名“美国湾”，8 月又改了安大略湖。",
-    "en_points": "At a Tennessee rally Saturday, Trump floated renaming the Atlantic or Pacific, e.g. 'Trump Ocean'; he previously renamed the Gulf of Mexico and, in August, Lake Ontario.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "5f29071da54b",
@@ -748,12 +801,13 @@
     "source": "NBC15",
     "published": "2026-10-11T06:13:57-05:00",
     "category": "city",
-    "zh_title": "暖意持续到周一，之后大幅转凉",
-    "zh_points": "今天晴，微南风，最高约 80°F（约 27°C），夜间低温 60 多°F；周一仍似夏天，后半周转凉并有降雨。记得备好外套和伞。",
-    "en_points": "Sunny today with highs near 80 and a light southerly breeze; mild night in the low 60s. Summer-like Monday, then cooler with rain chances later in the week.",
-    "importance": 2,
+    "zh_title": "周一前持续偏暖，随后天气明显转变",
+    "zh_points": "周日晴、最高约 80°F，周一仍似夏天；本周后段转凉并有降雨可能，注意随时增减衣物、备好雨具。",
+    "en_points": "Sunny Sunday with highs near 80°F and summer-like warmth Monday; cooler with rain chances later in the week. Plan for layers and an umbrella.",
+    "importance": 3,
     "deadline": null,
-    "action": "下半周备好外套和雨伞"
+    "action": null,
+    "drop": false
   },
   {
     "id": "0640d3b8745f",
@@ -762,12 +816,13 @@
     "source": "NBC15",
     "published": "2026-10-11T01:13:52-05:00",
     "category": "city",
-    "zh_title": "佐治亚消防员幼子停车场被撞身亡",
-    "zh_points": "佐治亚州 Gainesville 一辆 SUV 停车时意外加速冲上路缘，撞倒正在逛街的消防员父子，22 个月大的男孩不幸身亡；外州新闻。",
-    "en_points": "In Gainesville, Georgia, an SUV accidentally accelerated over a curb while parking and hit a firefighter and his 22-month-old son; the boy died. Out-of-state news.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "1dc6c7a1fd58",
@@ -776,12 +831,13 @@
     "source": "NBC15",
     "published": "2026-10-10T21:49:58-05:00",
     "category": "city",
-    "zh_title": "Oak Bank 送南瓜，1500 个提前送光",
-    "zh_points": "Fitchburg 的 Oak Bank 周六办第 25 届南瓜赠送，原定到中午，1500 个南瓜上午 11 点就领完；活动已结束。",
-    "en_points": "Oak Bank's 25th annual Great Pumpkin Give Away in Fitchburg was set to run until noon Saturday, but all 1,500 pumpkins were gone by 11 a.m. The event is over.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "fe412075d2ee",
@@ -789,13 +845,14 @@
     "url": "https://www.wmtv15news.com/2026/10/11/agents-tear-gas-protesters-after-group-blocks-ice-vehicles/",
     "source": "NBC15",
     "published": "2026-10-10T21:04:57-05:00",
-    "category": "international",
-    "zh_title": "俄勒冈示威者围堵 ICE 车辆遭催泪瓦斯",
-    "zh_points": "俄勒冈州 Salem 约 30 人周六上午围堵配合 ICE 执法的联邦探员车辆，探员动用催泪瓦斯驱散；国际生应远离此类冲突现场。",
-    "en_points": "In Salem, Oregon, about 30 people blocked in federal agents working with ICE on Saturday, and agents used tear gas. International students should steer clear of such scenes.",
-    "importance": 2,
+    "category": "city",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
+    "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "6a6b05228560",
@@ -804,12 +861,13 @@
     "source": "NBC15",
     "published": "2026-10-10T20:12:50-05:00",
     "category": "city",
-    "zh_title": "麦迪逊南区新开独立超市 Maurer's",
-    "zh_points": "Maurer's Urban Market 周六在麦迪逊南区开业，女性经营的独立超市，卖新鲜蔬果、熟食、咖啡和本地产品；住南边的同学多了买菜选择。",
-    "en_points": "Maurer's Urban Market, an independent woman-owned grocery with produce, prepared meals and coffee, opened Saturday on Madison's South Side.",
+    "zh_title": "Maurer's 超市在麦迪逊南区开业",
+    "zh_points": "女性经营的独立超市 Maurer's Urban Market 周六在南区开业，售卖生鲜、熟食、咖啡和本地产品；住南区的同学多一个买菜选择。",
+    "en_points": "Maurer's Urban Market, an independent woman-owned grocery, opened Saturday on Madison's South Side with produce, prepared meals, coffee and local goods.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "2e6b24cb79fe",
@@ -818,12 +876,13 @@
     "source": "NBC15",
     "published": "2026-10-10T19:08:24-05:00",
     "category": "city",
-    "zh_title": "DeForest 幼儿进入“年度宝宝”赛四分之一决赛",
-    "zh_points": "15 个月大的 Millie 从 57 名宝宝的分组中突围，进入全国“年度宝宝”评选四分之一决赛，家人借此分享试管婴儿经历；本地温情新闻。",
-    "en_points": "Fifteen-month-old Millie Strommen of DeForest advanced from a group of 57 to the quarterfinals of a national Baby of the Year contest; her family shares their IVF story.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "05aa70868515",
@@ -832,12 +891,13 @@
     "source": "NBC15",
     "published": "2026-10-10T18:35:49-05:00",
     "category": "city",
-    "zh_title": "Isaias 残余引发佐治亚、南卡多地龙卷风",
-    "zh_points": "飓风 Isaias 衍生的强风暴周六在佐治亚与南卡交界一带至少 3 个县造成龙卷风破坏，Aiken、Saluda 两县曾发龙卷风警报；外州新闻。",
-    "en_points": "Tornadoes spun off from Hurricane Isaias damaged at least three counties in the Georgia–South Carolina CSRA region Saturday, with warnings for Aiken and Saluda counties.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "1249a86b1f40",
@@ -846,12 +906,13 @@
     "source": "NBC15",
     "published": "2026-10-10T18:24:18-05:00",
     "category": "city",
-    "zh_title": "殉职州警 Bradley Ritger 葬礼举行",
-    "zh_points": "家人、同事和全美执法人员周六在 Chippewa Falls 送别州警 Ritger；他 9 月处理追车时受伤，10/2 殉职，曾在州巡警服务 5 年。",
-    "en_points": "Family, friends and officers from across the country honored Trooper Bradley Ritger at his funeral Saturday in Chippewa Falls; he died Oct. 2 after a September pursuit injury.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "26380dcce505",
@@ -860,12 +921,13 @@
     "source": "NBC15",
     "published": "2026-10-10T17:51:05-05:00",
     "category": "campus",
-    "zh_title": "男篮热身赛 94–71 胜 UW-Parkside",
-    "zh_points": "威州男篮周六在 Kohl Center 首场表演赛 94–71 击败 UW-Parkside，Nolan Winter 9 投 7 中得 15 分；球迷首次看到新阵容。",
-    "en_points": "Wisconsin men's basketball beat UW-Parkside 94-71 in its exhibition opener at the Kohl Center; Nolan Winter scored 15 on 7-of-9 shooting. First look at the new roster.",
-    "importance": 2,
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
+    "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "6ee6b322ed0d",
@@ -874,12 +936,13 @@
     "source": "NBC15",
     "published": "2026-10-10T17:11:17-05:00",
     "category": "health-safety",
-    "zh_title": "Mendota 湖帆船遇阵风翻船，全员无碍",
-    "zh_points": "周六下午 4:15 左右，一艘帆船在 Marshall Park 附近被突来阵风吹翻，附近船只上前协助，所有人都穿着救生衣；在湖上活动务必穿救生衣。",
-    "en_points": "A sudden gust capsized a sailboat on Lake Mendota near Marshall Park around 4:15 p.m. Saturday; nearby boats helped and everyone wore life jackets. Always wear one on the lake.",
+    "zh_title": "门多塔湖帆船遇阵风翻覆，众人均已获助",
+    "zh_points": "周六傍晚一艘帆船在 Marshall Park 附近遇突发阵风翻覆，周边船只协助救人，所有人均穿救生衣；湖上活动务必穿好救生衣。",
+    "en_points": "A sailboat capsized on Lake Mendota near Marshall Park Saturday after a sudden gust; nearby boats helped and everyone wore life jackets. Always wear one on the lake.",
     "importance": 2,
     "deadline": null,
-    "action": "下湖务必穿救生衣"
+    "action": null,
+    "drop": false
   },
   {
     "id": "d6a45f5c403e",
@@ -888,12 +951,13 @@
     "source": "NBC15",
     "published": "2026-10-10T16:12:38-05:00",
     "category": "city",
-    "zh_title": "Portage 男子被控 10 项持有儿童色情罪",
-    "zh_points": "8/15 国家失踪与受虐儿童中心向警方举报后，Portage 一名 30 岁男子被查出在两个社媒平台分享违法内容，现被控 10 项罪名；外地治安新闻。",
-    "en_points": "After an Aug. 15 tip from NCMEC, Portage police say a 30-year-old man shared child sexual abuse material on two social media platforms; he faces 10 possession counts.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "7bbde1f7f51c",
@@ -902,12 +966,13 @@
     "source": "NBC15",
     "published": "2026-10-10T16:10:35-05:00",
     "category": "city",
-    "zh_title": "佛州提醒：风暴后遇野生动物保持距离",
-    "zh_points": "佛州鱼类与野生动物保护委员会提醒，风暴后洪水区可能出现更多鳄鱼和蛇，应保持距离；暴风天气还可能让海牛、小海龟搁浅。外州新闻。",
-    "en_points": "Florida's FWC advises giving wildlife space after a major storm: alligators and snakes may be more visible in flooded areas, and manatees or turtle hatchlings may be stranded.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "281187ac734c",
@@ -916,11 +981,12 @@
     "source": "NBC15",
     "published": "2026-10-10T15:45:58-05:00",
     "category": "city",
-    "zh_title": "暖意几天不退，周一晚起转雷雨",
-    "zh_points": "周末威州南部晴，最高 70 多到近 80°F（约 25–27°C），像八月下旬；周一暖意转为晚间雷雨，下周多轮阵雨。",
-    "en_points": "Highs in the upper 70s to near 80 with sunshine this weekend, feeling like late August; Monday's warmth gives way to evening storms and rounds of showers next week.",
+    "zh_title": "-",
+    "zh_points": "-",
+    "en_points": "-",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   }
 ]

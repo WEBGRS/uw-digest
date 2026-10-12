@@ -119,6 +119,8 @@ async function runDigest(env, date = today(), force = false) {
 export class Mailer extends WorkerEntrypoint {
   async send(to, mail) {
     if (!validEmail(to) || !mail || typeof mail.subject !== "string") throw new Error("bad mail");
+    // Sign-in codes must really go out; no outbox dry run here
+    if (!this.env.RESEND_API_KEY) throw new Error("RESEND_API_KEY not set");
     return sendMail(this.env, to, { subject: mail.subject, html: String(mail.html || ""), text: String(mail.text || "") }, {}, this.env.LOGIN_FROM || this.env.MAIL_FROM);
   }
 }

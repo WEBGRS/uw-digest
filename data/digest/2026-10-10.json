@@ -11,7 +11,8 @@
     "en_points": "Free, open sessions at Pyle Center 225 on Oct 11, 9 a.m.–5:30 p.m.; Bilkent's Hakan Kirimli speaks on Kemal Karpat's legacy. Good for history and Middle East students.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "e7d566ae22fa",
@@ -23,9 +24,10 @@
     "zh_title": "研究生项目线上开放日，10 月底前可看",
     "zh_points": "10/1–10/31 开放线上网站，招生顾问讲解申请流程和研究生服务资源；考虑在 UW 读研的本科生可趁月内了解。",
     "en_points": "Online open house runs Oct 1–31: enrollment coaches walk through applying and the services UW–Madison offers grad students. Useful if you're weighing grad school here.",
-    "importance": 3,
+    "importance": 2,
     "deadline": "2026-10-31",
-    "action": "10/31 前登录线上开放日网站"
+    "action": "10/31 前登录线上开放日网站",
+    "drop": false
   },
   {
     "id": "94f269f2b1cc",
@@ -39,7 +41,8 @@
     "en_points": "The Parent & Family Program runs three days of tours and Badger events for visiting families; $30 per person, UW students free.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "2ecf7223e23f",
@@ -51,9 +54,10 @@
     "zh_title": "WUD 电影：《SLC Punk》今晚放映",
     "zh_points": "10/10 晚 9 点放映 1998 年美国片《SLC Punk》，R 级，97 分钟，讲两个书呆子变成 80 年代朋克后寻找人生方向。",
     "en_points": "WUD Film screens the 1998 R-rated film SLC Punk at 9 p.m. Oct 10: 97 minutes about two ex-geeks turned 1980s punks figuring out their lives.",
-    "importance": 1,
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "8b5f1ffc459a",
@@ -67,7 +71,8 @@
     "en_points": "Wisconsin Union Theater stages The Poisoner at 7:30 p.m. Oct 10, a neo-noir play inspired by the 2014 Flint water crisis about a journalist uncovering contaminated water.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "f6f5c87d6736",
@@ -81,7 +86,8 @@
     "en_points": "Free 7 p.m. screening in 4070 Vilas Hall of Visconti's 1957 White Nights, a Dostoevsky adaptation starring Mastroianni, in Italian with English subtitles.",
     "importance": 2,
     "deadline": null,
-    "action": "10/10 19:00 直接到 Vilas Hall 4070"
+    "action": "10/10 19:00 直接到 Vilas Hall 4070",
+    "drop": false
   },
   {
     "id": "80acf854c068",
@@ -93,9 +99,10 @@
     "zh_title": "创作歌手 Renny Conti 今晚演出",
     "zh_points": "布鲁克林创作歌手 Renny Conti 携 James Eichman 于 10/10 晚 7 点演出；地点和票价摘要未注明，需看原页面。",
     "en_points": "Brooklyn singer-songwriter Renny Conti plays with James Eichman at 7 p.m. Oct 10; the excerpt doesn't list venue or price, so check the event page.",
-    "importance": 1,
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "8aa630ef002c",
@@ -109,7 +116,8 @@
     "en_points": "Badgers men's soccer hosts Rutgers at 7 p.m. at McClimon Sports Complex; ticket info is on uwbadgers.com.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "3841dfbec67c",
@@ -121,9 +129,10 @@
     "zh_title": "WUD 电影：恐怖片《Backrooms》放映",
     "zh_points": "10/10 傍晚 6:30 放映 2026 年新片《Backrooms》，R 级、110 分钟，讲家具店地下室出现怪门的超现实恐怖故事。",
     "en_points": "WUD Film shows Kane Parsons' 2026 horror film Backrooms at 6:30 p.m.; R-rated, 110 minutes, about a strange doorway in a furniture showroom basement.",
-    "importance": 1,
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "2fd8d9f9221a",
@@ -135,9 +144,10 @@
     "zh_title": "强暴危机中心（RCC）今晚开放咨询",
     "zh_points": "10/10 晚 6–9 点，RCC 倡导员在 College Library 2191D 及 Zoom 值班，可咨询性暴力相关问题和校园资源。",
     "en_points": "RCC advocates hold drop-in hours 6–9 p.m. in 2191D College Library (Helen C. White Hall) and on Zoom to talk about sexual violence or campus resources.",
-    "importance": 2,
+    "importance": 3,
     "deadline": null,
-    "action": "需要帮助可到 2191D 或用 Zoom 联系"
+    "action": "需要帮助可到 2191D 或用 Zoom 联系",
+    "drop": false
   },
   {
     "id": "2346b7e6c339",
@@ -151,7 +161,8 @@
     "en_points": "The Wisconsin Men's Ice Hockey Club plays UW-Eau Claire 4:45–7 p.m. at the Sub-Zero Ice Center in Bakke Recreation & Wellbeing Center.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "94aff1c7e211",
@@ -163,9 +174,10 @@
     "zh_title": "铁人三项俱乐部在 Bakke 办短程赛",
     "zh_points": "威斯康星铁人三项俱乐部 10/10 下午 3–4 点在 Bakke 中心 Cove Pool 办比赛；这段时间打算去游泳的可留意。",
     "en_points": "The Wisconsin Triathlon Club hosts a sprint race 3–4 p.m. at Bakke's Cove Pool; if you planned a swim then, expect the pool to be in use.",
-    "importance": 1,
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "d1f36ee7a719",
@@ -179,7 +191,8 @@
     "en_points": "Russian Flagship students only: s'mores and snacks around Fire Circle #1 at Picnic Point, 1–2:30 p.m. Oct 10.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "3633d84b0503",
@@ -193,7 +206,8 @@
     "en_points": "Free, no-registration walk 1–3 p.m. through the state's largest conifer collection at Longenecker Gardens; meet at the Arboretum Visitor Center.",
     "importance": 2,
     "deadline": null,
-    "action": "10/10 13:00 到植物园游客中心集合"
+    "action": "10/10 13:00 到植物园游客中心集合",
+    "drop": false
   },
   {
     "id": "9d581c7aa84d",
@@ -207,7 +221,8 @@
     "en_points": "Badgers men's basketball plays UW-Parkside at noon at the Kohl Center; ticket info is on uwbadgers.com.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "b32a4bc1b15a",
@@ -219,9 +234,10 @@
     "zh_title": "前女篮球员诉 UW 案被联邦法官驳回",
     "zh_points": "六名前 UW 女篮球员指控前主教练 Marisa Moseley 心理虐待、校方保护不力，联邦法官周三驳回了这起诉讼。",
     "en_points": "A federal judge dismissed a suit by six ex-UW women's basketball players alleging psychological abuse by former coach Marisa Moseley and little protection from the university.",
-    "importance": 3,
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "57b3dff16535",
@@ -235,7 +251,8 @@
     "en_points": "Racine Lutheran routed a strong Kenosha St. Joseph team behind its star quarterback. High school sports; no campus impact.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f98647dc0412",
@@ -249,7 +266,8 @@
     "en_points": "NBC15 roundup of WIAA Week 8 high school football: conference-deciding games, broken records and comebacks, including Waunakee's 7-3 win over Monona Grove.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "b7e0bcdd6399",
@@ -263,7 +281,8 @@
     "en_points": "Madison's sewerage district cut its proposed 2027 rate hike from 12% to 9.9%; sewer bills could still rise, so renters paying utilities may see higher costs.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "3dc52b35433b",
@@ -277,7 +296,8 @@
     "en_points": "Video: thousands of mourners gathered in Chippewa Falls to honor fallen Wisconsin state trooper Bradley Ritger. Statewide news, no direct campus impact.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "9d3558b270f4",
@@ -291,7 +311,8 @@
     "en_points": "At an SMPH Precision Public Health Forum, Nicole Rogus-Pulia showed how tailored public health can address dysphagia, a swallowing disorder that can cause pneumonia.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "26815d93b492",
@@ -305,7 +326,8 @@
     "en_points": "Beaver Dam's high-powered offense beat Madison Edgewood to claim a share of the Badger Small Conference title. Local high school sports.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "57cd043277e3",
@@ -319,7 +341,8 @@
     "en_points": "Photo: Verona senior running back Jax Wepking after scoring in the Wildcats' 20-14 win over Madison Memorial.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "e8373c693d26",
@@ -333,7 +356,8 @@
     "en_points": "WISC-TV's Friday, Oct. 9 late-night newscast video; the excerpt lists no specific stories.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "83fa25a675a0",
@@ -347,7 +371,8 @@
     "en_points": "WKOW's Week 8 high school football highlights from the second-to-last regular-season week, with de facto conference title games and close finishes.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "7f3897215315",
@@ -361,7 +386,8 @@
     "en_points": "Video highlights of conference-deciding games: Madison Memorial vs. Verona, Edgewood vs. Beaver Dam, Monona Grove vs. Waunakee, plus more scores.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "a542d3b853cc",
@@ -375,7 +401,8 @@
     "en_points": "Video highlights from Big Foot vs. Lake Mills, Portage vs. Lakeside Lutheran and Middleton vs. Madison West, plus more scores.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "2aa045b28b0f",
@@ -387,9 +414,10 @@
     "zh_title": "擅离医院的 Huber 服刑人员已落网",
     "zh_points": "周三从医院擅自离开的 48 岁 Huber 服刑人员 Martin Meyers，周五被 Sauk 县警员抓获并送回 Dane 县监狱。",
     "en_points": "Martin Meyers, 48, who walked away from a hospital Wednesday mid-Huber sentence, was arrested Friday by Sauk County deputies and returned to the Dane County Jail.",
-    "importance": 2,
+    "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "df019967e028",
@@ -401,9 +429,10 @@
     "zh_title": "2023 年枪杀麦迪逊少女案凶手获刑 25 年",
     "zh_points": "Reginald Sexton 因 2023 年在麦迪逊公寓外枪杀 15 岁少女 Kyesha Miller，被判 25 年监禁加 15 年延长监管。",
     "en_points": "Reginald Sexton, 24, got 25 years in prison for the 2023 shooting death of 15-year-old Kyesha Miller outside the Harmony Apartments on Milwaukee Street.",
-    "importance": 2,
+    "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "39d1843ce560",
@@ -417,7 +446,8 @@
     "en_points": "Video: Waunakee held off Monona Grove to claim a share of the Badger Large Conference title.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "2120efd55a69",
@@ -431,7 +461,8 @@
     "en_points": "Video: Belleville routed Marshall to clinch a share of the Eastern Suburban Conference title.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "0f462c82ef6e",
@@ -445,7 +476,8 @@
     "en_points": "Video: Beaver Dam beat Edgewood to claim a share of the Badger Small Conference title.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "65ad001deca6",
@@ -459,7 +491,8 @@
     "en_points": "Channel 3000's Week 8 high school football show; the excerpt gives no details.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f94b8f9dea44",
@@ -473,7 +506,8 @@
     "en_points": "Wisconsin's consumer protection agency warns of ticket scams as the Brewers head into the postseason. Buying playoff seats? Stick to official or trusted sellers.",
     "importance": 2,
     "deadline": null,
-    "action": "季后赛票只在官方渠道购买"
+    "action": "季后赛票只在官方渠道购买",
+    "drop": false
   },
   {
     "id": "720edbee9714",
@@ -485,9 +519,10 @@
     "zh_title": "各界致敬 UW 诺奖得主 Francis Halzen",
     "zh_points": "UW 物理学教授 Francis Halzen 于 10/6 获 2026 年诺贝尔物理学奖，州内、全美及国际各界领导人纷纷致敬，UW 相关诺奖得主再添一位。",
     "en_points": "Leaders across Wisconsin, the U.S. and the world paid tribute to UW–Madison physics professor Francis Halzen after his 2026 Nobel Prize in physics was announced Oct. 6.",
-    "importance": 4,
+    "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "73d9cd5175a4",
@@ -501,7 +536,8 @@
     "en_points": "Channel 3000 video on the Parade of Homes showcasing local new builds; no further details in the excerpt.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "74bbbd83affa",
@@ -515,7 +551,8 @@
     "en_points": "Video: Verona held off Madison Memorial to secure a share of the Big Eight Conference title.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f1343752599d",
@@ -529,7 +566,8 @@
     "en_points": "Channel 3000's list of Week 8 high school football scores from around Wisconsin.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "6b97c6dc0312",
@@ -543,7 +581,8 @@
     "en_points": "Channel 3000 video on a state trooper being honored; the excerpt has no further details.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "3cbbbe5626b6",
@@ -557,7 +596,8 @@
     "en_points": "Channel 3000 video: a jail resident who had been declared AWOL has been found. No other details in the excerpt.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "93210035bd67",
@@ -571,7 +611,8 @@
     "en_points": "WKOW image page about fallen trooper Bradley Ritger's age; no text excerpt.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "311e132e174a",
@@ -585,7 +626,8 @@
     "en_points": "WKOW image of fallen trooper Bradley Ritger's hat and badge number; no text excerpt.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "29d550db780b",
@@ -599,7 +641,8 @@
     "en_points": "WKOW article: thousands gathered in Chippewa Falls to honor fallen Wisconsin state trooper Bradley Ritger.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "6c99784a572f",
@@ -611,9 +654,10 @@
     "zh_title": "男子冰球再零封对手，开季 3 连胜",
     "zh_points": "主教练 Mike Hastings 重返明尼苏达州立大学取胜，Badgers 连续两场零封对手，开季 3-0，为近 18 个赛季第二次。",
     "en_points": "Mike Hastings won in his return to Minnesota State as the Badgers posted a second straight shutout and started 3-0 for only the second time in 18 seasons.",
-    "importance": 2,
+    "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "0a754862a267",
@@ -627,7 +671,8 @@
     "en_points": "A deep TD pass between two Waunakee seniors decided it, ending Monona Grove's unbeaten run and giving Waunakee at least a share of the Badger Large title.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "a969c1ba39d2",
@@ -641,7 +686,8 @@
     "en_points": "Delta expects higher fares and strong demand through the holidays. Flying home for winter break? Compare prices and book early.",
     "importance": 3,
     "deadline": null,
-    "action": "寒假机票尽早比价预订"
+    "action": "寒假机票尽早比价预订",
+    "drop": false
   },
   {
     "id": "928696e1db90",
@@ -655,7 +701,8 @@
     "en_points": "Spanish-language report: Hurricane Isaias made landfall as a Category 2 storm near Destin, Florida, Friday night with 105 mph winds.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "823f658d63bf",
@@ -667,9 +714,10 @@
     "zh_title": "排名第一的女子冰球客场负于俄亥俄州立",
     "zh_points": "排名第二的 Ohio State 靠两个以多打少进球取胜，No.1 Badgers 罕见在两节领先后落败。",
     "en_points": "No. 2 Ohio State scored two power-play goals to hand top-ranked Wisconsin a rare loss after the Badgers led through two periods.",
-    "importance": 2,
+    "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "9b0b455bc7a4",
@@ -683,7 +731,8 @@
     "en_points": "A local man stayed on his boat off Alabama's Dauphin Island as Hurricane Isaias approached; police say he knew the risks. Out-of-state news.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "45564d8750c8",
@@ -697,7 +746,8 @@
     "en_points": "UW-Whitewater leads after round one of the WIAC Women's Golf Championship in Reedsburg; the team winner earns an NCAA Division III bid.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f3f8108d4167",
@@ -711,7 +761,8 @@
     "en_points": "Several Usher and Chris Brown tour dates, including Oct. 29 in Columbia, S.C., and stops in Baltimore, Cincinnati and Indianapolis, were abruptly pulled Friday.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "a3765d345e2b",
@@ -725,7 +776,8 @@
     "en_points": "A Wisconsin law lets domestic abuse and stalking victims break leases, but one woman with two police stalking letters and a restraining order request still didn't qualify.",
     "importance": 3,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "993df58b86c0",
@@ -739,7 +791,8 @@
     "en_points": "Martin Meyers, who left a hospital Wednesday afternoon and was last seen near 202 South Park Street, was arrested Friday by Sauk County deputies.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "324cabd0dce2",
@@ -753,7 +806,8 @@
     "en_points": "As Milwaukee advanced to the NLCS, CC Sabathia chronicled his night on social media, starting at Yankee Stadium and celebrating the Brewers three time zones away.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "f88d872a5ab7",
@@ -767,7 +821,8 @@
     "en_points": "The Wisconsin DNR is hosting candlelight hikes and fall festivals at state parks through October and November, self-guided or staff-led; a good weekend trip for fall colors.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "b02d804f0181",
@@ -781,7 +836,8 @@
     "en_points": "Green Bay police referred two felony battery and two misdemeanor resisting/obstructing counts against Madison's independent police monitor Aeiramique Glass, Ismael Ozanne said.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "55997fb1a073",
@@ -795,7 +851,8 @@
     "en_points": "A look at three things the Brewers have done right this postseason and three they need to fix before facing the Dodgers in the NLCS.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "c8a8e04667b4",
@@ -809,7 +866,8 @@
     "en_points": "Reese's tops Wisconsin's Halloween candy sales, with Twizzlers also standing out. Light reading if you're stocking up for Halloween.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "5b8e5cb05fdd",
@@ -823,7 +881,8 @@
     "en_points": "Wisconsin State Journal live scoreboard for Week 8's high-profile high school football games.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "634f7d2828ba",
@@ -837,7 +896,8 @@
     "en_points": "Wisconsin State Journal live scoreboard for Week 8's high-profile high school football games.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "141632d4dc16",
@@ -851,7 +911,8 @@
     "en_points": "Wisconsin State Journal live scoreboard for Week 8's high-profile high school football games.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "305c925fc785",
@@ -865,7 +926,8 @@
     "en_points": "Critic Wil Loper reviews Social Reckoning, the Social Network sequel about whistleblower Frances Haugen, which he says mostly succeeds, plus Verity.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "c52b92f6a58e",
@@ -879,7 +941,8 @@
     "en_points": "Video: three Racine County takeaways from the WIAA's latest high school football playoff projections.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "ef2e69aae377",
@@ -893,7 +956,8 @@
     "en_points": "Wisconsin State Journal live scoreboard for high-profile Week 6 and Week 8 high school football games.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "a063576ae082",
@@ -907,7 +971,8 @@
     "en_points": "A federal judge gave final approval to AT&T's $177 million settlement over two breaches disclosed in 2024. If you were a customer and filed a claim, watch for payment.",
     "importance": 2,
     "deadline": null,
-    "action": "曾是 AT&T 用户可查索赔状态"
+    "action": "曾是 AT&T 用户可查索赔状态",
+    "drop": false
   },
   {
     "id": "d4422b5612ee",
@@ -921,7 +986,8 @@
     "en_points": "Police seek a midsize red sedan, likely with front passenger-side damage, that hit a moped near E. Washington Ave. and Independence Lane on Sept. 26, seriously injuring someone.",
     "importance": 2,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": false
   },
   {
     "id": "367a11b73ed6",
@@ -935,7 +1001,8 @@
     "en_points": "President Trump canceled plans to attend Saturday's Alabama-Georgia game in Tuscaloosa so first responders can focus on Hurricane Isaias, the White House said.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "61772f6f58b4",
@@ -949,7 +1016,8 @@
     "en_points": "CMS administrator Dr. Mehmet Oz touted a record $50 billion for rural health care in a heated interview over Medicaid cuts. National politics, no direct campus impact.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   },
   {
     "id": "6a83288fb5af",
@@ -963,6 +1031,7 @@
     "en_points": "The Partners in Giving campaign for state, Universities of Wisconsin and UW Health employees starts Oct. 12, with donations due Dec. 1. It's aimed at staff, not students.",
     "importance": 1,
     "deadline": null,
-    "action": null
+    "action": null,
+    "drop": true
   }
 ]

@@ -1048,5 +1048,20 @@
   "deadline": null,
   "action": null,
   "drop": false
+ },
+ {
+  "id": "832b8bc05d18",
+  "title": "Proposed Rule Change to Collect OPT/STEM Fees",
+  "url": "https://www.federalregister.gov/documents/2026/10/08/2026-20660/optional-practical-training-fees",
+  "source": "UW–Madison International Student Services",
+  "published": "2026-10-14T14:28:59-05:00",
+  "category": "international",
+  "zh_title": "国土安全部拟对 OPT 收费：首次 7 万美元",
+  "zh_points": "DHS 10/8 发布拟议规则：F-1 首次 OPT 收费 7 万美元，之后每次（含 STEM 延期）3 万美元；CPT、J-1 不适用。仅为草案、未生效，意见征集到 11/9。",
+  "en_points": "DHS proposed a $70,000 fee for an F-1 student's first OPT and $30,000 for each later one, STEM extensions included; CPT and J-1 are exempt. Not final; comments close Nov 9.",
+  "importance": 5,
+  "deadline": null,
+  "action": null,
+  "drop": false
  }
 ]

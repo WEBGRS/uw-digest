@@ -1,0 +1,50 @@
+[
+ {
+  "id": "576bd90cbe71",
+  "title": "UW-Madison biology merger raises staff concerns over layoffs, botany’s future",
+  "url": "https://www.dailycardinal.com/article/2026/10/uw-madison-biology-merger-raises-staff-concerns-over-layoffs-botanys-future",
+  "source": "The Daily Cardinal",
+  "published": "2026-10-15",
+  "category": "academics",
+  "zh_title": "UW植物与整合生物系合并引担忧",
+  "zh_points": "UW将植物学系与整合生物学系合并为生物系，教工担忧植物学被边缘化与裁员，但校方称本科专业均保持不变。",
+  "en_points": "UW-Madison merged botany and integrative biology into a new Biology Department, sparking staff concerns over botany's future, though undergraduate programs remain unchanged.",
+  "importance": 4,
+  "deadline": null,
+  "action": null,
+  "drop": false,
+  "via": "gemini"
+ },
+ {
+  "id": "9b2b7a25d626",
+  "title": "Dane County supervisor seeks to cut $3 million for sheriff’s body cameras until policies are in place",
+  "url": "https://www.dailycardinal.com/article/2026/10/dane-county-supervisor-seeks-to-cut-3-million-for-sheriffs-body-cameras-until-policies-are-in-place",
+  "source": "The Daily Cardinal",
+  "published": "2026-10-15",
+  "category": "city",
+  "zh_title": "戴恩县议员提议削减警局随身执法仪预算",
+  "zh_points": "戴恩县议员提出修正案，主张在明确隐私与调阅政策前暂缓300万美元警用执法仪拨款。",
+  "en_points": "A Dane County supervisor proposed pausing $3 million for sheriff's body cameras until clear public access and privacy policies are adopted.",
+  "importance": 3,
+  "deadline": null,
+  "action": null,
+  "drop": false,
+  "via": "gemini"
+ },
+ {
+  "id": "f34f30a3de31",
+  "title": "Student Judiciary dismisses second brief claiming ASM Chair election process violations",
+  "url": "https://www.dailycardinal.com/article/2026/10/student-judiciary-dismisses-second-brief-claiming-asm-chair-election-process-violations",
+  "source": "The Daily Cardinal",
+  "published": "2026-10-14",
+  "category": "campus",
+  "zh_title": "ASM学生司法委员会驳回主席选举程序诉请",
+  "zh_points": "学生司法委员会驳回了针对春季学生会主席选举违规提出的第二份诉请书，维持原决议。",
+  "en_points": "The ASM Student Judiciary dismissed a second brief alleging procedural violations during the spring chair election, keeping the results in place.",
+  "importance": 3,
+  "deadline": null,
+  "action": null,
+  "drop": false,
+  "via": "gemini"
+ }
+]

@@ -199,6 +199,7 @@ legend { font-weight: 700; font-size: 14px; padding: 0; margin-bottom: 8px; }
 }
 /* Phones: no date line, tagline, update count, star scores, English headline or the repeated ranking */
 @media (max-width: 760px) {
+  .sections { position: static; }
   .dateline, .tagline, .updated, .byline .stars, .byline .otitle, .rail { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {

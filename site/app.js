@@ -274,10 +274,7 @@ function render() {
       const more = el("button", "more-link", t("seeAll"));
       more.type = "button";
       more.addEventListener("click", () => {
-        state.cat = k;
-        state.limit = PAGE;
-        syncNav();
-        render();
+        goCat(k);
         window.scrollTo({ top: $("main").offsetTop - 60 });
       });
       hd.append(more);
@@ -339,6 +336,19 @@ function syncNav() {
   for (const c of $("cats").children) c.setAttribute("aria-pressed", String(c.dataset.cat === state.cat));
 }
 
+// A section switch is a history step: Back returns to the previous section instead of leaving the site
+function goCat(key, quiet) {
+  if (key === state.cat) return;
+  state.cat = key;
+  state.limit = PAGE;
+  syncNav();
+  render();
+  if (!quiet) try { history.pushState({ cat: key }, "", location.pathname + location.search); } catch (e) { /* file url */ }
+}
+addEventListener("popstate", (e) => {
+  if (e.state && "cat" in e.state && state.digest) goCat(e.state.cat, true);  // #subscribe and other hash steps carry no section
+});
+
 function buildNav() {
   const nav = $("cats");
   nav.replaceChildren();
@@ -349,12 +359,7 @@ function buildNav() {
     b.dataset.cat = key;
     if (key !== "all") b.style.setProperty("--cat", catColor(key));
     b.setAttribute("aria-pressed", String(key === state.cat));
-    b.addEventListener("click", () => {
-      state.cat = key;
-      state.limit = PAGE;
-      syncNav();
-      render();
-    });
+    b.addEventListener("click", () => goCat(key));
     return b;
   };
   nav.append(mk("all", t("front")));
@@ -442,5 +447,6 @@ async function init() {
     return;
   }
   applyLang();
+  try { history.replaceState({ cat: state.cat }, "", location.href); } catch (e) { /* file url */ }
 }
 init();

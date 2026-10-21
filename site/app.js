@@ -170,7 +170,9 @@ function kicker(it) {
 function byline(it) {
   const b = el("div", "byline");
   b.append(el("span", "stars", "★".repeat(it.importance) + "☆".repeat(5 - it.importance)));
-  b.append(el("span", null, state.lang === "en" ? it.source : it.source + " · " + it.title));
+  const src = el("span", null, it.source);
+  if (state.lang !== "en") src.append(el("span", "otitle", " · " + it.title));  // the original English headline
+  b.append(src);
   if (it.deadline) b.append(el("span", "due", `${t("due")} ${it.deadline}`));
   return b;
 }

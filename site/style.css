@@ -197,6 +197,10 @@ legend { font-weight: 700; font-size: 14px; padding: 0; margin-bottom: 8px; }
   .card { padding: 22px 18px; margin: 36px 0; }
   .ticker-label { padding: 9px 10px; }
 }
+/* Phones: no date line, tagline, update count, star scores, English headline or the repeated ranking */
+@media (max-width: 760px) {
+  .dateline, .tagline, .updated, .byline .stars, .byline .otitle, .rail { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .rv, .sr, .progress { animation: none !important; }

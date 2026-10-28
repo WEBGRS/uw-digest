@@ -5,13 +5,13 @@ A daily digest of UW-Madison news, ranked by importance for students and summari
 ## How it works
 
 1. `scripts/fetch.py` pulls 14 RSS feeds (university offices, student media, Madison outlets) into `data/pending/<date>.json`.
-2. `scripts/daily.ps1` hands the pending items to headless Claude (`claude -p`, Read/Write tools only) using `scripts/judge_prompt.md`. Claude writes `data/digest/<date>.json`: a Chinese headline and key points, a category, an importance score 1–5, an optional deadline and action.
+2. `scripts/daily.ps1` hands the pending items to a headless editor. The default is Gemini (`scripts/judge_gemini.ps1` runs `agy -p` with `scripts/gemini_prompt.md`). Gemini writes `data/inbox/<date>.gemini.json`, with a Chinese and English summary, a category, an importance score 1–5, and an optional deadline and action for every item. It also adds up to 8 stories from news sites that have no working feed. `scripts/submit_digest.py` is the upload step. It validates the file against the pending items, downloads every extra story to confirm its headline, a verbatim quote and its date, and then writes `data/digest/<date>.json`. If validation fails, Gemini gets one repair pass. If Gemini fails entirely, Claude (`claude -p` with `scripts/judge_prompt.md`) does the day instead. Gemini's runbook is `.agents/skills/uw-digest-daily/SKILL.md`.
 3. `scripts/build.py` validates the judged file and builds `site/data/digest.json` (last 60 days).
 4. `scripts/apply_actions.py` appends deadline items with importance 4+ to the owner's TODO list, using validated fields only.
 5. `site/` is a static page that renders the digest and hosts the subscribe form.
 6. `worker/` is a Cloudflare Worker with D1: double opt-in subscribe, preference page, one-click unsubscribe, and a daily cron that builds each subscriber's email from `digest.json` (shared logic in `worker/src/engine.js`) and sends it through Resend. Without `RESEND_API_KEY`, emails are written to the `outbox` table instead.
 
-Feed text is untrusted: the judge prompt treats it as data, the judge has no shell access, and every field is escaped on the page and in emails.
+Feed text is untrusted: the editor prompts treat it as data, neither editor gets shell access, extra stories are checked against the live page, and every field is escaped on the page and in emails.
 
 ## Run locally
 

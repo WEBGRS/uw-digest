@@ -32,7 +32,18 @@ try {
     }
     git -C $wt log --oneline --stat origin/main..HEAD
     if ($DryRun) { git -C $wt push --dry-run origin HEAD:main } else { git -C $wt push -q origin HEAD:main }
-    if ($LASTEXITCODE -ne 0) { throw "push failed" }
+    if ($LASTEXITCODE -ne 0) {
+        # Retry with the gh token passed through env; log why the helper failed
+        $gh = 'C:\Users\ghs\AppData\Local\Microsoft\WinGet\Packages\GitHub.cli_Microsoft.Winget.Source_8wekyb3d8bbwe\bin\gh.exe'
+        $ErrorActionPreference = "Continue"
+        $env:GH_PUSH_TOKEN = "$(& $gh auth token 2>$null)".Trim()
+        Write-Output ("publish: gh auth token exit " + $LASTEXITCODE + ", length " + $env:GH_PUSH_TOKEN.Length)
+        git -C $wt -c credential.helper= -c 'credential.helper=!f() { echo username=x-access-token; echo "password=$GH_PUSH_TOKEN"; }; f' push -q origin HEAD:main
+        $rc = $LASTEXITCODE
+        Remove-Item Env:GH_PUSH_TOKEN
+        if ($rc -ne 0) { throw "push failed" }
+        Write-Output "publish: retry with gh token worked"
+    }
     Write-Output ("publish: pushed " + $todo.Count + " data commit(s)")
 } finally {
     git worktree remove --force $wt

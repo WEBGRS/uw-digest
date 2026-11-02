@@ -186,7 +186,25 @@ function candidates() {
     }
   }
   // Same score: stories with a photo lead, then newest
-  return out.sort((a, b) => b.importance - a.importance || Boolean(b.image) - Boolean(a.image) || (b.day > a.day ? 1 : b.day < a.day ? -1 : 0));
+  out.sort((a, b) => b.importance - a.importance || Boolean(b.image) - Boolean(a.image) || (b.day > a.day ? 1 : b.day < a.day ? -1 : 0));
+  // Drop repeats of the same headline
+  const seen = new Set();
+  return out.filter((it) => {
+    const k = (it.title || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    if (!k) return true;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+}
+
+// Published within FRESH_DAYS of the newest digest day
+const FRESH_DAYS = 7;
+function isFresh(it) {
+  const newest = Date.parse(state.digest.days[0].date);
+  if (it.deadline && Date.parse(it.deadline) >= newest) return true;
+  const d = Date.parse((it.published || it.day).slice(0, 10));
+  return newest - d <= FRESH_DAYS * 864e5;
 }
 
 function renderTicker() {
@@ -214,9 +232,12 @@ function render() {
     front.append(el("div", "empty", t("empty")));
     return;
   }
+  // Front page: last week only, all stories when too few
+  const fresh = list.filter(isFresh);
+  const top = fresh.length >= 3 ? fresh : list;
   // Lead with a real photo when one of the top stories has it
-  const withPhoto = list.slice(0, 6).findIndex((i) => i.image);
-  if (withPhoto > 0) [list[0], list[withPhoto]] = [list[withPhoto], list[0]];
+  const withPhoto = top.slice(0, 6).findIndex((i) => i.image);
+  if (withPhoto > 0) [top[0], top[withPhoto]] = [top[withPhoto], top[0]];
   const used = new Set();
   const use = (it) => (used.add(it.id), it);
 
@@ -224,12 +245,12 @@ function render() {
   const grid = el("div", "front");
   const leadCol = el("div", "lead-col");
   const lead = rv(el("article", "lead"), 0);
-  const L = use(list[0]);
+  const L = use(top[0]);
   const h2 = el("h2", "title");
   h2.append(link(L, head(L)));
   lead.append(media(L, true), kicker(L), h2, el("p", null, body(L)), byline(L));
   leadCol.append(lead);
-  const pair = list.slice(1, 3).map(use);
+  const pair = top.slice(1, 3).map(use);
   if (pair.length) {
     const row = el("div", "pair");
     pair.forEach((it, i) => {
@@ -242,7 +263,7 @@ function render() {
     leadCol.append(row);
   }
   grid.append(leadCol);
-  const rank = list.slice(3, 9).map(use);
+  const rank = top.slice(3, 9).map(use);
   if (rank.length) {
     const rail = el("aside", "rail");
     rail.append(el("h2", null, t("most")));
@@ -265,7 +286,7 @@ function render() {
   if (state.cat === "all") {
     const wrap = el("div", "blocks");
     for (const k of Object.keys(state.digest.categories)) {
-      const items = list.filter((i) => i.category === k && !used.has(i.id)).slice(0, 4);
+      const items = top.filter((i) => i.category === k && !used.has(i.id)).slice(0, 4);
       if (items.length < 2) continue;
       const bl = rv(el("section", "block"), 0, "sr");
       bl.style.setProperty("--cat", catColor(k));

@@ -202,6 +202,7 @@ function candidates() {
 const FRESH_DAYS = 7;
 // At most this many stories per section on the front grid and rail
 const FRONT_CAP = 2;
+const MINIMP = $("minimpBox");
 function isFresh(it) {
   const newest = Date.parse(state.digest.days[0].date);
   if (it.deadline && Date.parse(it.deadline) >= newest) return true;
@@ -231,7 +232,7 @@ function render() {
   renderTicker();
   const list = candidates();
   if (!list.length) {
-    front.append(el("div", "empty", t("empty")));
+    front.append(el("div", "empty", t("empty")), MINIMP);
     return;
   }
   // Front page: last week only, all stories when too few
@@ -334,7 +335,9 @@ function render() {
   const rest = list.filter((i) => !used.has(i.id)).sort((a, b) => (b.day > a.day ? 1 : b.day < a.day ? -1 : b.importance - a.importance));
   if (rest.length) {
     const sec = el("div", "latest");
-    sec.append(el("h2", null, t("latest")));
+    const lh = el("div", "latest-head");
+    lh.append(el("h2", null, t("latest")), MINIMP);
+    sec.append(lh);
     let day = null, wrap = null;
     for (const it of rest.slice(0, state.limit)) {
       if (it.day !== day) {
@@ -359,7 +362,7 @@ function render() {
       sec.append(m);
     }
     feed.append(sec);
-  }
+  } else front.append(MINIMP);
 }
 
 function syncNav() {

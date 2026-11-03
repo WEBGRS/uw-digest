@@ -134,7 +134,8 @@ article:hover .media img, .block:hover .media img { transform: scale(1.05); }
 
 /* Latest */
 .latest { padding-top: 30px; }
-.latest > h2 { margin: 0 0 4px; font-family: var(--serif); font-size: 34px; font-weight: 900; }
+.latest-head { display: flex; align-items: center; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; margin: 0 0 4px; }
+.latest-head h2 { margin: 0; font-family: var(--serif); font-size: 34px; font-weight: 900; }
 .day h3.dayh { margin: 26px 0 6px; font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 6px 12px; background: var(--ink); color: #fff; display: inline-block; }
 .row { display: grid; grid-template-columns: minmax(0, 1fr) 176px; gap: 18px; padding: 16px 0 16px 16px; border-bottom: 1px solid var(--line); border-left: 5px solid var(--cat); margin-top: 12px; background: linear-gradient(90deg, color-mix(in srgb, var(--cat) 5%, white), transparent 40%); }
 .row h3 { margin: 6px 0 4px; font-family: var(--serif); font-size: 21px; line-height: 1.28; font-weight: 700; }

@@ -18,13 +18,6 @@
   <div class="wrap">
     <span class="dateline" id="dateline"></span>
     <div class="actions">
-      <label class="minimp"><span data-i18n="show"></span>
-        <select id="minimp">
-          <option value="1" data-i18n="impAll"></option>
-          <option value="3" selected data-i18n="imp3"></option>
-          <option value="4" data-i18n="imp4"></option>
-        </select>
-      </label>
       <div class="langsw" role="group" aria-label="Language"><button type="button" class="lg" data-lang="en">EN</button><button type="button" class="lg" data-lang="zh">中文</button></div>
       <a class="btn" href="#subscribe" data-i18n="getEmail"></a>
     </div>
@@ -52,6 +45,13 @@
 <main id="main">
   <div class="wrap">
     <p class="updated" id="updated"></p>
+    <label class="minimp" id="minimpBox"><span data-i18n="show"></span>
+      <select id="minimp">
+        <option value="1" data-i18n="impAll"></option>
+        <option value="3" selected data-i18n="imp3"></option>
+        <option value="4" data-i18n="imp4"></option>
+      </select>
+    </label>
     <section id="front" aria-live="polite"></section>
   </div>
   <section class="band" id="band" hidden>

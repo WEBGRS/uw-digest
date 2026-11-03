@@ -200,6 +200,8 @@ function candidates() {
 
 // Published within FRESH_DAYS of the newest digest day
 const FRESH_DAYS = 7;
+// At most this many stories per section on the front grid and rail
+const FRONT_CAP = 2;
 function isFresh(it) {
   const newest = Date.parse(state.digest.days[0].date);
   if (it.deadline && Date.parse(it.deadline) >= newest) return true;
@@ -235,9 +237,16 @@ function render() {
   // Front page: last week only, all stories when too few
   const fresh = list.filter(isFresh);
   const top = fresh.length >= 3 ? fresh : list;
+  const per = {}, pick = [];
+  for (const it of top) {
+    if ((per[it.category] || 0) >= FRONT_CAP) continue;
+    per[it.category] = (per[it.category] || 0) + 1;
+    pick.push(it);
+    if (pick.length >= 9) break;
+  }
   // Lead with a real photo when one of the top stories has it
-  const withPhoto = top.slice(0, 6).findIndex((i) => i.image);
-  if (withPhoto > 0) [top[0], top[withPhoto]] = [top[withPhoto], top[0]];
+  const withPhoto = pick.slice(0, 6).findIndex((i) => i.image);
+  if (withPhoto > 0) [pick[0], pick[withPhoto]] = [pick[withPhoto], pick[0]];
   const used = new Set();
   const use = (it) => (used.add(it.id), it);
 
@@ -245,12 +254,12 @@ function render() {
   const grid = el("div", "front");
   const leadCol = el("div", "lead-col");
   const lead = rv(el("article", "lead"), 0);
-  const L = use(top[0]);
+  const L = use(pick[0]);
   const h2 = el("h2", "title");
   h2.append(link(L, head(L)));
   lead.append(media(L, true), kicker(L), h2, el("p", null, body(L)), byline(L));
   leadCol.append(lead);
-  const pair = top.slice(1, 3).map(use);
+  const pair = pick.slice(1, 3).map(use);
   if (pair.length) {
     const row = el("div", "pair");
     pair.forEach((it, i) => {
@@ -263,7 +272,7 @@ function render() {
     leadCol.append(row);
   }
   grid.append(leadCol);
-  const rank = top.slice(3, 9).map(use);
+  const rank = pick.slice(3, 9).map(use);
   if (rank.length) {
     const rail = el("aside", "rail");
     rail.append(el("h2", null, t("most")));
